@@ -92,7 +92,7 @@ screens:
           default: true
           packages:
             - Spot (GTK4 spotify client): dev.alextren.Spot
-            - Dolpin (Wii and Gamecube emulator):
+            - Dolpin (Wii and Gamecube emulator): org.DolphinEmu.dolphin-emu
             - Cemu (Wii U emulator): info.cemu.Cemu
             - GNOME Clocks: org.gnome.clocks
             - Easy Effects: com.github.wwmm.easyeffects
