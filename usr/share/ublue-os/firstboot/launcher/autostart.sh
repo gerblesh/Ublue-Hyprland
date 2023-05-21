@@ -2,10 +2,6 @@
 
 # Ensure target file exists and is a symlink (not a regular file or dir).
 if [ ! -f "$HOME"/.config/ublue-firstboot ]; then
-    # copy config files
-    cp -r /usr/etc/homedir/* ~HOME/
-    cp -r /usr/etc/homedir/.config/ ~/.config/
-    cp -r /usr/etc/homedir/.local/share/ ~/.local/share/
 
     # add file to prevent firstboot from running again
 

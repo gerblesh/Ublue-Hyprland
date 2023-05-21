@@ -162,9 +162,4 @@ firstboot:
   # This is just an example selection:
   flatpaks:
   - org.freedesktop.Platform.ffmpeg-full/x86_64/22.08
-  - com.github.tchx84.Flatseal/x86_64/stable
-  - com.brave.Browser/x86_64/stable
-  - org.fedoraproject.MediaWriter/x86_64/stable
-  - org.kde.KStyle.Kvantum/x86_64/5.15-22.08
-  - com.github.GradienceTeam/x86_64/stable
-  - com.obsproject.Studio/x86_64/stable
+

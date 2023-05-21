@@ -55,7 +55,7 @@ screens:
       groups:
         Core GNOME Apps:
           description: Core system applications for the GNOME desktop environment.
-          default: true
+          default: false
           packages:
             - Calculator: org.gnome.Calculator
             - Calendar: org.gnome.Calendar
@@ -84,8 +84,9 @@ screens:
             - Deja Dup Backups: org.gnome.DejaDup
             - Fedora Media Writer: org.fedoraproject.MediaWriter
             - Flatseal (Permission Manager): com.github.tchx84.Flatseal
-            - Font Downloader: org.gustavoperedo.FontDownloader
-            - Mozilla Firefox: org.mozilla.firefox
+            - Brave (Web Browser): com.brave.Browser/x86_64/stable
+            - Kvantum (QT theming): org.kde.KStyle.Kvantum/x86_64/5.15-22.08
+            - Gradience (GTK4 theming): com.github.GradienceTeam/x86_64/stable
         Web Browsers:
           description: Additional browsers to complement or replace Firefox.
           default: false
@@ -126,15 +127,12 @@ screens:
             - Gstreamer for OBS: com.obsproject.Studio.Plugin.Gstreamer
             - Gstreamer VAAPI for OBS: com.obsproject.Studio.Plugin.GStreamerVaapi
             - Boatswain for Streamdeck: com.feaneron.Boatswain
-
   final-screen:
     source: yafti.screen.title
     values:
       title: "All done!"
       icon: "/path/to/icon"
       links:
-        - "Install More Applications":
-            run: /usr/bin/gnome-software
         - "Website":
             run: /usr/bin/xdg-open https://ublue.it
         - "Join the Discord Community":
