@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-cp -r /usr/etc/homedir/* "$HOME"/
-cp -r /usr/etc/homedir/.config/* "$HOME"/.config/
-cp -r /usr/etc/homedir/.local/share/* "$HOME"/.local/share/
+cp -r /usr/etc/homedir/* ~HOME/
+cp -r /usr/etc/homedir/.config/ ~/.config/
+cp -r /usr/etc/homedir/.local/share/ ~/.local/share/
 
 Hyprland
 
