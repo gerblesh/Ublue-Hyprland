@@ -1,11 +1,11 @@
 # This file can only be edited inside the uBlue image's git repository.
 
 # The image will be at "ghcr.io/yourusername/name".
-name: startingpoint
+name: custom-ublue-hyprland
 
 # The native container image to build on top of.
 # Warning: Non-uBlue images might not work properly, due to missing components.
-base-image: ghcr.io/ublue-os/silverblue-main
+base-image: ghcr.io/ublue-os/base-main
 
 # What Fedora version to use. Use an explicit version or `latest`.
 # If you use `latest`, you will be automatically updated to the next major
@@ -96,7 +96,6 @@ rpm:
     - yt-dlp
     - xarchiver
     - xdg-user-dirs
-    - xdg-tools
     #- greetd
     #- greetd-selinux
     # launchers
@@ -136,7 +135,6 @@ rpm:
     - fish
     # general audio shit
     - sox
-    - pactl
     # android shiz
     - android-file-transfer
     - android-tools
