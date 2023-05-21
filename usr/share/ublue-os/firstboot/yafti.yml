@@ -101,6 +101,8 @@ screens:
             - OTP Client (2FA auth): com.github.paolostivanin.OTPClient
             - Joplin (Notes App): net.cozic.joplin_desktop
             - FileZilla (FTP Client): org.filezillaproject.Filezilla
+            - Blender (3D editor): org.blender.Blender
+            - Inkscape (SVG editor): org.inkscape.Inkscape
         
         Web Browsers:
           description: Additional browsers to complement or replace Firefox.
