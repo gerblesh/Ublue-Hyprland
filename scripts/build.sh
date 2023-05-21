@@ -107,3 +107,6 @@ fi
 
 # Run "post" scripts.
 run_scripts "post"
+
+# fix ublue base-main booting into a black screen 
+systemctl enable getty@tty1
