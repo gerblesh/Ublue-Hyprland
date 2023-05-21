@@ -64,6 +64,82 @@ rpm:
     # Add your own below:
     # Example:
     # - tilix
+    - hyprland
+    - waybar-hyprland
+    - xdg-desktop-portal-hyprland
+    - xorg-x11-server-Xwayland
+    - swaybg
+    - swayidle
+    - swaylock
+    - polkit-gnome
+    - libseat
+    - network-manager-applet
+    - system-config-printer
+    - firewall-config
+    - blueman
+    - libnotify
+    - thunar
+    - thunar-archive-plugin
+    - thunar-volman
+    - htop
+    - imv
+    - zathura
+    - kvantum
+    - qt5ct
+    - qt6ct
+    - gtk-murrine-engine
+    - fastfetch
+    - mpv
+    - gparted
+    - pavucontrol
+    - dunst
+    - yt-dlp
+    - xarchiver
+    - xdg-user-dirs
+    - xdg-tools
+    #- greetd
+    #- greetd-selinux
+    # launchers
+    - fuzzel
+    # terminals
+    - foot
+    # text editor
+    - lite-xl
+    # yafti deps
+    - python3-pip
+    - libadwaita
+    # virtualisation
+    #  - virt-install
+    #  - virt-manager
+    #  - virt-viewer
+    #  - libvirt-client
+    # - libvirt-daemon-kvm
+    # screenshotting 
+    - grimshot
+    - wf-recorder
+    # graphical login is... troubled at the moment
+    #  - sway
+    # - sddm
+    # - qt5-qtgraphicaleffects
+    # - qt5-qtsvg
+    # - qt5-qtquickcontrols2
+    - wdisplays
+    - ksshaskpass
+    - kwalletmanager5
+    # fonts
+    - overpass-fonts
+    - overpass-mono-fonts
+    # dependencies for eww config:
+    - ripgrep
+    - light
+    - socat
+    - fish
+    # general audio shit
+    - sox
+    - pactl
+    # android shiz
+    - android-file-transfer
+    - android-tools
 
   # These RPMs will be removed from the system image. This step happens during
   # image build, BEFORE installing custom RPMs (from the "rpm.install" category).
@@ -87,5 +163,10 @@ firstboot:
   # the "just setup-flatpaks" command from our "custom.just" template file.
   # This is just an example selection:
   flatpaks:
-    - io.github.celluloid_player.Celluloid
-    - org.kde.krita
+  - org.freedesktop.Platform.ffmpeg-full/x86_64/22.08
+  - com.github.tchx84.Flatseal/x86_64/stable
+  - com.brave.Browser/x86_64/stable
+  - org.fedoraproject.MediaWriter/x86_64/stable
+  - org.kde.KStyle.Kvantum/x86_64/5.15-22.08
+  - com.github.GradienceTeam/x86_64/stable
+  - com.obsproject.Studio/x86_64/stable
