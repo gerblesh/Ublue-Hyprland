@@ -86,7 +86,22 @@ screens:
             - Flatseal (Permission Manager): com.github.tchx84.Flatseal
             - Brave (Web Browser): com.brave.Browser/x86_64/stable
             - Kvantum (QT theming): org.kde.KStyle.Kvantum/x86_64/5.15-22.08
-            - Gradience (GTK4 theming): com.github.GradienceTeam/x86_64/stable
+            - Gradience (GTK4 theming): com.github.GradienceTeam.Gradience/x86_64/stable
+        Optional Apps:
+          description: Optional Applications I use for creative work and recreation
+          default: true
+          packages:
+            - Spot (GTK4 spotify client): dev.alextren.Spot
+            - Dolpin (Wii and Gamecube emulator):
+            - Cemu (Wii U emulator): info.cemu.Cemu
+            - GNOME Clocks: org.gnome.clocks
+            - Easy Effects: com.github.wwmm.easyeffects
+            - OBS studio (Recording Software): com.obsproject.Studio
+            - Shotcut (Video Editor): org.shotcut.Shotcut
+            - OTP Client (2FA auth): com.github.paolostivanin.OTPClient
+            - Joplin (Notes App): net.cozic.joplin_desktop
+            - FileZilla (FTP Client): org.filezillaproject.Filezilla
+        
         Web Browsers:
           description: Additional browsers to complement or replace Firefox.
           default: false
