@@ -11,6 +11,7 @@ if [ "$(id -u)" != "0" ] && [ ! -z "$HOME" ] && [ -d "$HOME" ]; then
 
     if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
         echo "Starting Hyprland"
+        source "$HOME"/.profile
         Hyprland > /dev/null
     fi
 
