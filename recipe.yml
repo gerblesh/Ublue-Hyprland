@@ -67,7 +67,7 @@ rpm:
     # - tilix
     - hyprland
     - waybar-hyprland
-    - xdg-desktop-portal-hyprland
+    - xdg-desktop-portal-wlr
     - xorg-x11-server-Xwayland
     - swaybg
     - swayidle
@@ -97,8 +97,6 @@ rpm:
     - yt-dlp
     - xarchiver
     - xdg-user-dirs
-    #- greetd
-    #- greetd-selinux
     # launchers
     - fuzzel
     # terminals
@@ -108,21 +106,8 @@ rpm:
     # yafti deps
     - python3-pip
     - libadwaita
-    # virtualisation
-    #  - virt-install
-    #  - virt-manager
-    #  - virt-viewer
-    #  - libvirt-client
-    # - libvirt-daemon-kvm
     # screenshotting 
     - grimshot
-    - wf-recorder
-    # graphical login is... troubled at the moment
-    #  - sway
-    # - sddm
-    # - qt5-qtgraphicaleffects
-    # - qt5-qtsvg
-    # - qt5-qtquickcontrols2
     - wdisplays
     - ksshaskpass
     - kwalletmanager5
@@ -147,6 +132,7 @@ rpm:
     # Remove the native firefox (from Fedora) in favor of the Flatpak.
     - firefox
     - firefox-langpacks
+    - xdg-desktop-portal-hyprland
 
 # Configuration for the "first boot" experience, which is available after login.
 firstboot:
