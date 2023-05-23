@@ -86,8 +86,11 @@ rpm:
     - imv
     - zathura
     - kvantum
+    # qt shiz
     - qt5ct
     - qt6ct
+    - qt6-qtwayland
+    - qt5-qtwayland
     - gtk-murrine-engine
     - fastfetch
     - mpv
