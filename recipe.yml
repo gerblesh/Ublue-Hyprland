@@ -67,7 +67,8 @@ rpm:
     # - tilix
     - hyprland
     - waybar-hyprland
-    - xdg-desktop-portal-wlr
+    - xdg-desktop-portal-hyprland
+    - xdg-desktop-portal
     - xorg-x11-server-Xwayland
     - swaybg
     - swayidle
