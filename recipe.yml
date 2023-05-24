@@ -70,9 +70,11 @@ rpm:
     - xdg-desktop-portal-hyprland
     - xdg-desktop-portal
     - xorg-x11-server-Xwayland
+    # common utils
     - swaybg
     - swayidle
     - swaylock
+    - power-profiles-daemon
     - polkit-gnome
     - libseat
     - network-manager-applet
