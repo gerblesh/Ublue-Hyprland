@@ -12,7 +12,7 @@ function handle
   if string match -q "fullscreen>>?" $argv[1]
 
     or string match -q -r "^workspace>>((10)|\d)\$" $argv[1]
-      set wincount $(hyprctl clients -j | jq -r ". | map(select (.workspace.id == $lastws and .floating == false and .mapped == true)) | length")
+      set wincount $(hyprctl clients -j | jq -r ". | map(select (.workspace.id == $lastws and .floating == false and .mapped == true and .hidden == false)) | length")
       set fswincount $(hyprctl clients -j | jq -r ". | map(select (.workspace.id == $lastws and .fullscreen == true and .mapped == true)) | length")
 
       if test $wincount -eq 1
@@ -30,8 +30,9 @@ function handle
       or string match -q "movewindow>>*" $argv[1]
       or string match -q "openwindow>>*" $argv[1]
       or string match -q "closewindow>>*" $argv[1]
+      
 
-        set wincount $(hyprctl clients -j | jq -r ". | map(select (.workspace.id == $lastws and .floating == false and .mapped == true)) | length")
+      set wincount $(hyprctl clients -j | jq -r ". | map(select (.workspace.id == $lastws and .floating == false and .mapped == true and .hidden == false)) | length")
 
         if test $wincount -eq 1
             echo "nogaps"
@@ -43,3 +44,4 @@ function handle
 end
 
 socat -U - UNIX-CONNECT:/tmp/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock | while read line; handle $line; end
+

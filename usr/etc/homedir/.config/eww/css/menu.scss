@@ -11,6 +11,14 @@
   color: $accent;
 }
 
+.selected label {
+  color: $accent;
+  font-size: 40px;
+  background-color: $secondary;
+  border-top: solid $accent 2px;
+  border-radius: 0px 0px 15px 15px;
+}
+
 .inner-box{
   background-color: $main;
   border-radius: 20px; 

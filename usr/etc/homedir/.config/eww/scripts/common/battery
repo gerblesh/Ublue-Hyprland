@@ -36,7 +36,7 @@ color() {
 while true; do
   CAPACITY=$(cat /sys/class/power_supply/BAT1/capacity)
   STATE=$(cat /sys/class/power_supply/BAT1/status)
-
-  echo '{ "icon": "'"$(geticon)"'", "percent": '"$CAPACITY"', "color": "'"$(color)"'","status": "'"$(status)"'"}'
+  POWERPROFILE=$(powerprofilesctl get)
+  echo '{ "icon": "'"$(geticon)"'", "percent": '"$CAPACITY"', "color": "'"$(color)"'","status": "'"$(status)"'", "powerprofile": "'"$POWERPROFILE"'" }'
   sleep 3
 done
