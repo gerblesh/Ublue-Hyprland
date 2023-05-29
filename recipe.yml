@@ -91,18 +91,16 @@ rpm:
     - qalculate
     - exa
     - gnome-disk-utility
+    - dunst
+    - yt-dlp
+    - xarchiver
     # qt shiz
     - qt5ct
     - qt6ct
     - qt6-qtwayland
     - qt5-qtwayland
-    - gtk-murrine-engine
     - fastfetch
-    - mpv
     - pavucontrol
-    - dunst
-    - yt-dlp
-    - xarchiver
     - xdg-user-dirs
     # launchers
     - fuzzel
@@ -155,4 +153,6 @@ firstboot:
   # This is just an example selection:
   flatpaks:
   - org.freedesktop.Platform.ffmpeg-full/x86_64/22.08
+  - io.mpv.Mpv
+  - org.kde.kwalletmanager5
 
