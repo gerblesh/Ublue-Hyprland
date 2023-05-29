@@ -54,7 +54,7 @@ rpm:
   # repos, extra "repos" you've added, etc). The installation is automatically
   # performed via rpm-ostree during the image build, and will be pre-installed
   # at the "system level" in the final image.
-  install:
+   install:
     # Needed for yafti (the first boot installer). Remove if you're not using yafti.
     - python3-pip
     # GNOME's GTK4 theme, Libadwaita. Already included in Silverblue, but not
@@ -87,8 +87,10 @@ rpm:
     - thunar-volman
     - htop
     - imv
-    - zathura
     - kvantum
+    - qalculate
+    - exa
+    - gnome-disk-utility
     # qt shiz
     - qt5ct
     - qt6ct
@@ -97,7 +99,6 @@ rpm:
     - gtk-murrine-engine
     - fastfetch
     - mpv
-    - gparted
     - pavucontrol
     - dunst
     - yt-dlp
@@ -127,7 +128,6 @@ rpm:
     - fish
     # general audio shit
     - sox
-    - qalculate
     # android shiz
     - android-file-transfer
     - android-tools

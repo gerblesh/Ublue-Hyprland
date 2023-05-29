@@ -87,8 +87,10 @@ rpm:
     - thunar-volman
     - htop
     - imv
-    - zathura
     - kvantum
+    - qalculate
+    - exa
+    - gnome-disk-utility
     # qt shiz
     - qt5ct
     - qt6ct
@@ -97,7 +99,6 @@ rpm:
     - gtk-murrine-engine
     - fastfetch
     - mpv
-    - gparted
     - pavucontrol
     - dunst
     - yt-dlp
@@ -127,7 +128,6 @@ rpm:
     - fish
     # general audio shit
     - sox
-    - qalculate
     # android shiz
     - android-file-transfer
     - android-tools
