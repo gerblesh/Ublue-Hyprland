@@ -117,7 +117,6 @@ rpm:
     - grimshot
     - wdisplays
     - ksshaskpass
-    - kwalletmanager5
     # fonts
     - overpass-fonts
     - overpass-mono-fonts

@@ -102,6 +102,7 @@ screens:
             - FileZilla (FTP Client): org.filezillaproject.Filezilla
             - Blender (3D editor): org.blender.Blender
             - Inkscape (SVG editor): org.inkscape.Inkscape
+            - KWalletManager: org.kde.kwalletmanager5
         
         Web Browsers:
           description: Additional browsers to complement or replace Firefox.
