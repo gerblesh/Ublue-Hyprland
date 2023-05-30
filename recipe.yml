@@ -81,14 +81,13 @@ rpm:
     - thunar
     - thunar-archive-plugin
     - gstreamer-ffmpeg
-    - thunar-volman
     - htop
     - imv
     - kvantum
     - qalculate
     - exa
     - gnome-disk-utility
-    - dunst
+    - mako
     - yt-dlp
     - xarchiver
     # qt shiz
