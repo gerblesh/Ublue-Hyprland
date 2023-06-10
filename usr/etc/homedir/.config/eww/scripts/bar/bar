@@ -33,8 +33,10 @@ function handle
       
 
       set wincount $(hyprctl clients -j | jq -r ". | map(select (.workspace.id == $lastws and .floating == false and .mapped == true and .hidden == false)) | length")
+      set fswincount $(hyprctl clients -j | jq -r ". | map(select (.workspace.id == $lastws and .fullscreen == true and .mapped == true)) | length")
 
         if test $wincount -eq 1
+	  or test $fswincount -ne 0
             echo "nogaps"
         else
             echo ""

@@ -151,4 +151,5 @@ firstboot:
   - org.freedesktop.Platform.ffmpeg-full/x86_64/22.08
   - io.mpv.Mpv
   - org.kde.kwalletmanager5
+  - org.gtk.Gtk3theme.adw-gtk3-dark
 
