@@ -81,19 +81,21 @@ screens:
           description: System applications for all desktop environments.
           default: true
           packages:
-            - Deja Dup Backups: org.gnome.DejaDup
+            - Pika Backup: org.gnome.World.PikaBackup
             - Fedora Media Writer: org.fedoraproject.MediaWriter
             - Flatseal (Permission Manager): com.github.tchx84.Flatseal
             - Brave (Web Browser): com.brave.Browser/x86_64/stable
             - Kvantum (QT theming): org.kde.KStyle.Kvantum/x86_64/5.15-22.08
             - Gradience (GTK4 theming): com.github.GradienceTeam.Gradience/x86_64/stable
-        Optional Apps:
-          description: Optional Applications I use for creative work and recreation
+        General Apps:
+          description: Applications I use for creative work, recreation, and general computing
           default: true
           packages:
-            - Spot (GTK4 spotify client): dev.alextren.Spot
+            - Spot (GTK4 Spotify Client): dev.alextren.Spot
+            - G4Music (GTK4 Music Player)
             - Dolpin (Wii and Gamecube emulator): org.DolphinEmu.dolphin-emu
             - Cemu (Wii U emulator): info.cemu.Cemu
+            - Yuzu (Switch emulator):org.yuzu_emu.yuzu
             - GNOME Clocks: org.gnome.clocks
             - Easy Effects: com.github.wwmm.easyeffects
             - Shotcut (Video Editor): org.shotcut.Shotcut
@@ -102,6 +104,11 @@ screens:
             - FileZilla (FTP Client): org.filezillaproject.Filezilla
             - Blender (3D editor): org.blender.Blender
             - Inkscape (SVG editor): org.inkscape.Inkscape
+            - Signal (Messenger): org.signal.Signal
+            - Shotcut (Video Editor): org.shotcut.Shotcut
+            - Tagger (Audio Tagger): org.nickvision.tagger
+            - Syncthing (File Syncing): me.kozec.syncthingtk
+            - Pods (Graphical Podman Frontend): com.github.marhkb.Pods
         
         Web Browsers:
           description: Additional browsers to complement or replace Firefox.
@@ -123,6 +130,7 @@ screens:
             - SteamTinkerLaunch (Utility): com.valvesoftware.Steam.Utility.steamtinkerlaunch
             - Proton Updater for Steam: net.davidotek.pupgui2
             - Prism MC (Minecraft Launcher): org.prismlauncher.PrismLauncher
+            - Proton GE (Custom Proton Version): com.valvesoftware.Steam.CompatibilityTool.Proton-GE
 
         Office:
           description: Boost your productivity.
