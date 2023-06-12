@@ -33,6 +33,11 @@ if [[ ${#repos[@]} -gt 0 ]]; then
     echo "---"
 fi
 
+# install rpms from /tmp/rpms
+rpm-ostree install \
+    /tmp/rpms/*.rpm \
+    fedora-repos-archive
+
 # Ensure that all script files are executable.
 find /tmp/scripts -type f -exec chmod +x {} \;
 
