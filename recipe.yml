@@ -80,7 +80,6 @@ rpm:
     - blueman
     - thunar
     - thunar-archive-plugin
-    - gstreamer-ffmpeg
     - htop
     - imv
     - kvantum
@@ -125,6 +124,16 @@ rpm:
     # android shiz
     - android-file-transfer
     - android-tools
+    # ublue stuff
+    - distrobox
+    - libratbag
+    - just
+    - ffmpeg
+    - ffmpeg-libs
+    - podman-compose
+    - htop
+    - lshw
+    - git
 
   # These RPMs will be removed from the system image. This step happens during
   # image build, BEFORE installing custom RPMs (from the "rpm.install" category).
