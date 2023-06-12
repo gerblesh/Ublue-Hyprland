@@ -7,7 +7,7 @@ if [ ! -f "$HOME"/.config/ublue-firstboot ]; then
 
     touch "$HOME"/.config/ublue-firstboot
 
-    sed -i " 1 d" "$HOME"/.config/hypr/hyprland.conf
+    sed -i " 1 d" "$HOME"/.config/hypr/execs.conf
 
     /usr/bin/yafti /usr/share/ublue-os/firstboot/yafti.yml
 fi

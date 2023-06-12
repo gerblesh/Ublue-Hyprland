@@ -9,13 +9,10 @@
 - Hyprland (duh)
 - eww
 - cliphist
-- qalculate
-- fastfetch
-- lite-xl
-- android stuff (`android-file-transfer`, `android-tools`, and android udev rules)
 - custom yafti config/first time setup
 - all of the cool uBlue stuff
 
+(removed most cli tools as i've transitioned them to containers :D)
 # REBASE (DO THIS AT YOUR OWN RISK)
  ```bash
  rpm-ostree rebase ostree-unverified-registry:ghcr.io/gerblesh/custom-ublue-hyprland:latest

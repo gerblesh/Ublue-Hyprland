@@ -88,14 +88,14 @@ screens:
             - Kvantum (QT theming): org.kde.KStyle.Kvantum/x86_64/5.15-22.08
             - Gradience (GTK4 theming): com.github.GradienceTeam.Gradience/x86_64/stable
         General Apps:
-          description: Applications I use for creative work, recreation, and general computing
+          description: Applications I use.
           default: true
           packages:
             - Spot (GTK4 Spotify Client): dev.alextren.Spot
-            - G4Music (GTK4 Music Player)
+            - G4Music (GTK4 Music Player): com.github.neithern.g4music
             - Dolpin (Wii and Gamecube emulator): org.DolphinEmu.dolphin-emu
             - Cemu (Wii U emulator): info.cemu.Cemu
-            - Yuzu (Switch emulator):org.yuzu_emu.yuzu
+            - Yuzu (Switch emulator): org.yuzu_emu.yuzu
             - GNOME Clocks: org.gnome.clocks
             - Easy Effects: com.github.wwmm.easyeffects
             - Shotcut (Video Editor): org.shotcut.Shotcut
@@ -109,7 +109,6 @@ screens:
             - Tagger (Audio Tagger): org.nickvision.tagger
             - Syncthing (File Syncing): me.kozec.syncthingtk
             - Pods (Graphical Podman Frontend): com.github.marhkb.Pods
-        
         Web Browsers:
           description: Additional browsers to complement or replace Firefox.
           default: false
