@@ -126,10 +126,8 @@ rpm:
     - android-tools
     # ublue stuff
     - distrobox
-    - libratbag
     - just
-    - ffmpeg
-    - ffmpeg-libs
+    - ffmpeg-free
     - podman-compose
     - htop
     - lshw
