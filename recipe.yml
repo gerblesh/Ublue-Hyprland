@@ -132,6 +132,7 @@ rpm:
     # Remove the native firefox (from Fedora) in favor of the Flatpak.
     - firefox
     - firefox-langpacks
+    # remove kitty terminal emulator (installed automatically with Hyprland, using foot instead)
     - kitty
 
 # Configuration for the "first boot" experience, which is available after login.
