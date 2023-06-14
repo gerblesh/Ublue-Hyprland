@@ -55,18 +55,13 @@ rpm:
   # performed via rpm-ostree during the image build, and will be pre-installed
   # at the "system level" in the final image.
   install:
-    # Needed for yafti (the first boot installer). Remove if you're not using yafti.
-    - python3-pip
-    # GNOME's GTK4 theme, Libadwaita. Already included in Silverblue, but not
-    # other spins. You can remove if you aren't using yafti, but many native
-    # apps and binaries require it, so it's a good idea to always include it
-    # if you ever download or compile any custom software on your machine.
-    - libadwaita
+# Hyprland deps
     - hyprland
     - waybar-hyprland
     - xdg-desktop-portal-hyprland
     - xdg-desktop-portal
     - xorg-x11-server-Xwayland
+    - xdg-user-dirs
     # common utils
     - swaybg
     - swayidle
@@ -86,13 +81,12 @@ rpm:
     - gnome-disk-utility
     - mako
     - xarchiver
+    - pavucontrol
     # qt shiz
     - qt5ct
     - qt6ct
     - qt6-qtwayland
     - qt5-qtwayland
-    - pavucontrol
-    - xdg-user-dirs
     # launchers
     - fuzzel
     # terminals
@@ -100,7 +94,7 @@ rpm:
     # yafti deps
     - python3-pip
     - libadwaita
-    # screenshotting 
+    # screenshotting
     - grimshot
     - wdisplays
     - gnome-keyring
@@ -120,6 +114,10 @@ rpm:
     - podman-compose
     - htop
     - lshw
+    # dev stuff
+    - git
+    - ksshaskpass
+    
 
   # These RPMs will be removed from the system image. This step happens during
   # image build, BEFORE installing custom RPMs (from the "rpm.install" category).
@@ -155,4 +153,3 @@ firstboot:
   - io.mpv.Mpv
   - org.kde.kwalletmanager5
   - org.gtk.Gtk3theme.adw-gtk3-dark
-
