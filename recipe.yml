@@ -85,6 +85,8 @@ rpm:
     - mako
     - xarchiver
     - pavucontrol
+    # text editor
+    - lite-xl
     # qt shiz
     - qt5ct
     - qt6ct
