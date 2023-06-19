@@ -62,6 +62,9 @@ rpm:
     - xdg-desktop-portal
     - xorg-x11-server-Xwayland
     - xdg-user-dirs
+    # android
+    - android-tools
+    - android-file-transfer
     # common utils
     - swaybg
     - swayidle
