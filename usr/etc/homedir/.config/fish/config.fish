@@ -7,5 +7,5 @@ end
 
 alias mpv="flatpak run io.mpv.Mpv"
 alias ls="exa --icons --sort type"
-set PATH /var/home/user/.local/bin:$PATH
+set PATH "$HOME"/.local/bin:$PATH
 
