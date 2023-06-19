@@ -106,18 +106,20 @@ rpm:
     - light
     - socat
     - fish
-    # general audio shit
-    - sox
+    # audio
+    - pipewire
+    - wireplumber
+    - pipewire-alsa
+    - pipewire-jack-audio-connection-kit
+    - pipewire-pulseaudio
     # ublue stuff
     - distrobox
     - just
     - podman-compose
     - htop
     - lshw
-    # dev stuff
-    - git
+    # git askpass
     - ksshaskpass
-    
 
   # These RPMs will be removed from the system image. This step happens during
   # image build, BEFORE installing custom RPMs (from the "rpm.install" category).
