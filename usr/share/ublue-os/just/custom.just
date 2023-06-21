@@ -1,7 +1,7 @@
 default:
     @just --list
 
-setup-distrobox
+setup-distrobox:
   echo "Setting up distrobox git ..."
   mkdir -p "$HOME"/.local/bin
   curl -s https://raw.githubusercontent.com/89luca89/distrobox/main/install | sh -s -- --next --prefix "$HOME"/.local
