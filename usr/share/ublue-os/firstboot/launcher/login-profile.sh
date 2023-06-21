@@ -6,6 +6,9 @@ if [ "$(id -u)" != "0" ] && [ ! -z "$HOME" ] && [ -d "$HOME" ]; then
         # copy config files
         cp -r /usr/etc/homedir/.* "$HOME"/
         cp -r /usr/etc/homedir/* "$HOME"/
+        # setup distrobox
+        echo "Setting up distrobox git"
+        curl -s https://raw.githubusercontent.com/89luca89/distrobox/main/install | sh -s -- --next --prefix "$HOME"/.local
     fi
 
     if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
