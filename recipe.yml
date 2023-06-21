@@ -118,7 +118,6 @@ rpm:
     - pipewire-jack-audio-connection-kit
     - pipewire-pulseaudio
     # ublue stuff
-    - distrobox
     - just
     - podman-compose
     - htop
