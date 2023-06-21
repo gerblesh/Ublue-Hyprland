@@ -30,3 +30,6 @@ setup-gaming:
 nix-me-up:
   echo 'Setting phasers to kill. Installing nix.'
   /usr/bin/ublue-nix-install
+
+yafti:
+  yafti /etc/yafti.yml
