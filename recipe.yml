@@ -122,6 +122,7 @@ rpm:
     - podman-compose
     - htop
     - lshw
+    - distrobox (needed for compat, still installing the git version)
     # git askpass
     - ksshaskpass
 
@@ -138,7 +139,8 @@ rpm:
     # don't need fontawesome, already have nerdfonts
     - fontawesome5-fonts
     - fontawesome5-free-fonts
-    
+    # replaced with distrobox
+    - toolbox
 
 # Configuration for the "first boot" experience, which is available after login.
 firstboot:
