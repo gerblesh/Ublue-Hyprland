@@ -40,7 +40,7 @@ COPY scripts /tmp/scripts
 COPY --from=ghcr.io/ublue-os/config:latest /rpms /tmp/rpms
 
 # fix flatpak issues for the time being
-rpm-ostree override replace https://bodhi.fedoraproject.org/updates/FEDORA-2023-cab8a89753
+RUN rpm-ostree override replace https://bodhi.fedoraproject.org/updates/FEDORA-2023-cab8a89753
 
 # Run the build script, then clean up temp files and finalize container build.
 RUN chmod +x /tmp/scripts/build.sh && \
