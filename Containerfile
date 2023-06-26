@@ -37,7 +37,11 @@ COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 COPY scripts /tmp/scripts
 
 # copy the uBlue config
-COPY --from=ghcr.io/ublue-os/config:latest /rpms /tmp/rpms
+#COPY --from=ghcr.io/ublue-os/config:latest /rpms /tmp/rpms
+# Copy the udev rules individually
+COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-udev-rules.noarch.rpm /tmp/rpms/
+
+COPY --from=ghcr.io/gerblesh/ublue-updater:latest /rpms/ublue-updater.noarch.rpm /tmp/rpms/
 
 # fix flatpak issues for the time being
 RUN rpm-ostree override replace https://bodhi.fedoraproject.org/updates/FEDORA-2023-cab8a89753
