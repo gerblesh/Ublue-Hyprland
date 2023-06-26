@@ -3,13 +3,14 @@
 background-color=#1e1e2ef2
 text-color=#cdd6f4
 border-color=#b4befe
-progress-color=over #313244
+#progress-color=over #313244
 font=Overpass: 15
 border-radius=15
-default-timeout=1000
-padding=25,20,20
-anchor=bottom-right
-text-alignment=center
-
+default-timeout=2500
+#padding=25,20,20
+#anchor=bottom-right
+#text-alignment=center
+height=150
+width=450
 [urgency=high]
 border-color=#fab387
