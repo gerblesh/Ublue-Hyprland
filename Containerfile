@@ -47,11 +47,10 @@ COPY --from=ghcr.io/gerblesh/ublue-updater:latest /rpms/ublue-updater.noarch.rpm
 
 # hopyfully it work now
 
-# Run the build script, then clean up temp files and finalize container build.
+# Run the build script
 RUN chmod +x /tmp/scripts/build.sh && \
         /tmp/scripts/build.sh
 
-RUN rpm-ostree override replace https://bodhi.fedoraproject.org/updates/FEDORA-2023-464fae1680
-
+# clean up temp files and finalize container build.
 RUN rm -rf /tmp/* /var/* && \
         ostree container commit
