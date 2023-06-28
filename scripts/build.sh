@@ -117,4 +117,5 @@ run_scripts "post"
 
 systemctl enable getty@tty1
 sudo systemctl --global enable ublue-updater.timer
+systemctl disable rpm-ostree-countme.service
 systemctl enable power-profiles-daemon
