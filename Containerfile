@@ -41,7 +41,7 @@ COPY scripts /tmp/scripts
 # Copy the udev rules individually
 COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-udev-rules.noarch.rpm /tmp/rpms/
 
-COPY --from=ghcr.io/gerblesh/ublue-updater:latest /rpms/ublue-updater.noarch.rpm /tmp/rpms/
+COPY --from=ghcr.io/gerblesh/ublue-update:latest /rpms/ublue-updater.noarch.rpm /tmp/rpms/
 
 # fix flatpak issues for the time being
 

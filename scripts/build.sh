@@ -116,6 +116,6 @@ run_scripts "post"
 # fix ublue base-main booting into a black screen 
 
 systemctl enable getty@tty1
-sudo systemctl --global enable ublue-updater.timer
+sudo systemctl --global enable ublue-update.timer
 systemctl disable rpm-ostree-countme.service
 systemctl enable power-profiles-daemon
