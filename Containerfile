@@ -7,7 +7,7 @@
 
 ARG FEDORA_MAJOR_VERSION=38
 # Warning: changing this might not do anything for you. Read comment above.
-ARG BASE_IMAGE_URL=ghcr.io/ublue-os/silverblue-main
+ARG BASE_IMAGE_URL=quay.io/fedora-ostree-desktops/base
 
 FROM ${BASE_IMAGE_URL}:${FEDORA_MAJOR_VERSION}
 
@@ -37,19 +37,18 @@ COPY --from=docker.io/mikefarah/yq /usr/bin/yq /usr/bin/yq
 COPY scripts /tmp/scripts
 
 # copy the uBlue config
-#COPY --from=ghcr.io/ublue-os/config:latest /rpms /tmp/rpms
+COPY --from=ghcr.io/ublue-os/config:latest /rpms /tmp/rpms
 # Copy the udev rules individually
-COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-udev-rules.noarch.rpm /tmp/rpms/
+#COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-udev-rules.noarch.rpm /tmp/rpms/
 
+# Copy ublue-update
 COPY --from=ghcr.io/gerblesh/ublue-update:latest /rpms/ublue-update.noarch.rpm /tmp/rpms/
-
-# fix flatpak issues for the time being
-
-# hopyfully it work now
 
 # Run the build script, then clean up temp files and finalize container build.
 RUN chmod +x /tmp/scripts/build.sh && \
         /tmp/scripts/build.sh
+
+RUN rpm-ostree override remove ublue-os-update-services
 
 RUN rm -rf /tmp/* /var/* && \
         ostree container commit
