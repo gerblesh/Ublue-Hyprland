@@ -37,7 +37,7 @@ COPY ${RECIPE} /usr/share/ublue-os/recipe.yml
 # Add nix installer if you want to use it
 #COPY --from=ghcr.io/ublue-os/bling:latest /files/usr/bin/ublue-nix* /usr/bin
 
-#Copy the udev rules individually
+# Copy the udev rules individually
 COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-udev-rules.noarch.rpm /tmp/rpms/
 
 # Copy ublue-update
