@@ -33,11 +33,6 @@ if [[ ${#repos[@]} -gt 0 ]]; then
     echo "---"
 fi
 
-# install rpms from /tmp/rpms
-rpm-ostree install \
-    /tmp/rpms/*.rpm \
-    fedora-repos-archive
-
 # Ensure that all script files are executable.
 find /tmp/scripts -type f -exec chmod +x {} \;
 
@@ -112,10 +107,3 @@ fi
 
 # Run "post" scripts.
 run_scripts "post"
-
-# fix ublue base-main booting into a black screen 
-
-systemctl enable getty@tty1
-#sudo systemctl --global enable ublue-update.timer
-systemctl disable rpm-ostree-countme.service
-systemctl enable power-profiles-daemon
