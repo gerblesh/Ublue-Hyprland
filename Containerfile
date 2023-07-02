@@ -41,7 +41,7 @@ COPY ${RECIPE} /usr/share/ublue-os/recipe.yml
 COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-udev-rules.noarch.rpm /tmp/rpms/
 
 # Copy ublue-update
-COPY --from=ghcr.io/gerblesh/ublue-update:latest /rpms/ublue-update.noarch.rpm /tmp/rpms/
+COPY --from=ghcr.io/ublue-os/ublue-update:latest /rpms/ublue-update.noarch.rpm /tmp/rpms/
 
 # "yq" used in build.sh and the "setup-flatpaks" just-action to read recipe.yml.
 # Copied from the official container image since it's not available as an RPM.
