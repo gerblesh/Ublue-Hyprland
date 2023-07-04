@@ -6,11 +6,18 @@ border-color=#b4befe
 #progress-color=over #313244
 font=Overpass: 15
 border-radius=15
-default-timeout=2500
+default-timeout=7000
 #padding=25,20,20
 #anchor=bottom-right
 #text-alignment=center
 height=150
 width=450
+icon-path=/usr/share/icons/Papirus/
+on-button-left=exec makoctl menu -n "$id" fuzzel -d --prompt 'Select action: ' && makoctl dismiss -n "$id"
+
 [urgency=high]
+border-color=#f38ba8
+
+[actionable]
 border-color=#fab387
+
