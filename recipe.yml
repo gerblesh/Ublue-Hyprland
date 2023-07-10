@@ -111,6 +111,7 @@ rpm:
     - light
     - socat
     - fish
+    - pactl
     - papirus-icon-theme
     # audio
     - pipewire
