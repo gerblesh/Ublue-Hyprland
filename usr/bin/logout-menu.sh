@@ -11,7 +11,7 @@ choice=$(printf "$options" | fuzzel --dmenu --prompt=" ⏻  " | awk '{print $1}'
 case $choice in
     Shutdown)
         echo "Shutting down.."
-        systemctl shutdown 
+        systemctl poweroff 
         ;;
     Restart)
         echo "Restarting!"
