@@ -7,6 +7,7 @@ border-color=#b4befe
 font=Overpass: 15
 border-radius=15
 default-timeout=7000
+progress-color=#313244
 #padding=25,20,20
 #anchor=bottom-right
 #text-alignment=center
@@ -19,5 +20,5 @@ on-button-left=exec makoctl menu -n "$id" fuzzel -d --prompt 'Select action: ' &
 border-color=#f38ba8
 
 [actionable]
-border-color=#fab387
+border-color=#74c7ec
 

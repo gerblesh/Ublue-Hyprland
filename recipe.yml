@@ -103,7 +103,7 @@ rpm:
     # fonts
     - overpass-fonts
     - overpass-mono-fonts
-    - brightnessctl
+    - light
     - fish
     - papirus-icon-theme
     # audio
