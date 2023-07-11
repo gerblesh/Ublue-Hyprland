@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 WALLPAPER_PATH=""
 # Default Wallpaper, feel free to change this to whatever you like
