@@ -168,8 +168,7 @@
     },
 
     "tray": {
-        "rotate": 90,
-        "icon-size": 30,
+        "icon-size": 20,
         "spacing": 10
     },
      "backlight": {
