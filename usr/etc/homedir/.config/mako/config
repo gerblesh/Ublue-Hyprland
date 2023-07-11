@@ -12,7 +12,7 @@ default-timeout=7000
 #text-alignment=center
 height=150
 width=450
-icon-path=/usr/share/icons/Adwaita:/usr/share/icons/Papirus/
+icon-path=/usr/share/icons/Papirus/:/usr/share/icons/Adwaita
 on-button-left=exec makoctl menu -n "$id" fuzzel -d --prompt 'Select action: ' && makoctl dismiss -n "$id"
 
 [urgency=high]
