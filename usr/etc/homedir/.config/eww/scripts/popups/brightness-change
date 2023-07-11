@@ -1,9 +1,0 @@
-#!/bin/fish
-set OPEN (eww windows | grep "*brightness-popup")
-
-if test OPEN = ""
-	$HOME/.config/eww/scripts/popups/brightness-popup &
-else
-	killall brightness-popup
-	$HOME/.config/eww/scripts/popups/brightness-popup &
-end

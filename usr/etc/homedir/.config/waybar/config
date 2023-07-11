@@ -11,18 +11,25 @@
     // Global configuration
     // -------------------------------------------------------------------------
 
-    "layer": "top",
 
-    "position": "bottom",
-    "exclusive": false,
+    "position": "top",
     // If height property would be not present, it'd be calculated dynamically
     "height": 10,
 
     "modules-left": [
-        "tray"
+        "tray",
+        "sway/workspaces",
+        "sway/mode"
     ],
-    "modules-center": [],
-    "modules-right": [],
+    "modules-center": [
+        "custom/clock"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "backlight",
+        "battery",
+        "custom/media"
+    ],
 
 
     // -------------------------------------------------------------------------
@@ -39,7 +46,6 @@
         "format": "  {capacity}%", // Icon: bolt
         // Not connected to AC
         "format-discharging": "{icon}   {capacity}%",
-	"rotate": 90,
         "format-icons": [
             "", // Icon: battery-full
             "", // Icon: battery-three-quarters
@@ -56,7 +62,6 @@
         "tooltip": false
     },
     "custom/clock": {
-      "rotate": 90,
       "interval": 1,
       "exec": "date '+%H:%M:%S, %a %b %d (%m-%d-%Y)'",
       "format": {}
@@ -113,7 +118,7 @@
         "max-length": 120
     },
 
-    "wlr/workspaces": {
+    "sway/workspaces": {
         "on-scroll-up": "hyprctl dispatch workspace e+1",
         "on-scroll-down": "hyprctl dispatch workspace e-1",
         "all-outputs": true,
@@ -133,10 +138,9 @@
 
     "pulseaudio": {
         "scroll-step": 1,
-	"rotate": 90,
         "format": "{icon} {volume}%",
         "format-bluetooth": "{icon} {volume}%",
-        "format-muted": "*Muted*",
+        "format-muted": "󰝟 {volume}%",
         "format-icons": {
             "headphones": "",
             "handsfree": "",
@@ -144,7 +148,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["","",""]
+            "default": ["","","󰕾"]
         },
         "on-click": "pavucontrol"
     },
@@ -169,10 +173,9 @@
         "spacing": 10
     },
      "backlight": {
-		"rotate": 90,
-//		"device": "acpi_video1",
-		"format": "{icon} {percent}%",
-		"format-icons": ["󰃞","󰃝", "󰃠"]
+//    "device": "acpi_video1",
+        "format": "{icon} {percent}%",
+        "format-icons": ["󰃞","󰃝", "󰃠"]
     },
      "custom/media": {
 		"format": "{icon} {}",

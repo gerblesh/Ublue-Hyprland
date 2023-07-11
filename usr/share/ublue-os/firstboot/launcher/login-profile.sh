@@ -10,6 +10,7 @@ if [ "$(id -u)" != "0" ] && [ ! -z "$HOME" ] && [ -d "$HOME" ]; then
         echo "Setting up just"
         mkdir -p "$HOME"/.config/just
         cp -r /usr/share/ublue-os/just/custom.just "$HOME"/.config/just/justfile
+        
     fi
 
     if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then

@@ -39,7 +39,7 @@
 
 
 @define-color highlight @crust;
-@define-color main rgba(30, 30, 46,0.95);
+@define-color main @base;
 @define-color primary @lavender;
 @define-color tertiary @surface0;
 /* =============================================================================
@@ -65,7 +65,7 @@
 }
 
 @keyframes blink-critical {
-    70% {
+    10% {
       color: @text;
     }
 
@@ -86,16 +86,16 @@
     min-height: 0;
     margin: 0;
     padding: 0;
-    font-size: 24px;
+    font-size: 20px;
 }
 
 /* The whole bar */
 #waybar {
-    background: @transparent;
+    background: @main;
     color: @text;
-    font-family: Overpass Nerd Font;
+    font-family: OverpassMono Nerd Font;
     font-size: 20px;
-    border-radius: 0px 10px 10px 0px;
+    border-bottom: solid 2px @primary;
 }
 
 /* Each module */
@@ -110,12 +110,11 @@
 #pulseaudio,
 #temperature,
 #tray {
-    border-radius: 15px;
+    border-radius: 0px;
     background-color: @main;
     /*margin: 1410px 0px 0px 10px;*/
-    margin-left: 5px;
-    padding: 30px 40px;
-    border: solid 2px @tertiary;
+    margin: 5px 5px;
+    /*padding: 30px 40px;*/
 }
 
 
@@ -129,22 +128,18 @@
     animation-direction: alternate;
 }
 
-#battery.warning {
-    color: @peach;
-}
-
-#battery.critical {
-    color: @red;
-}
-
 #battery.warning.discharging {
     animation-name: blink-warning;
-    animation-duration: 3s;
+    animation-duration: 10s;
 }
 
 #battery.critical.discharging {
     animation-name: blink-critical;
     animation-duration: 2s;
+}
+
+#battery.charging {
+    color: @green;
 }
 
 #clock {
@@ -218,33 +213,25 @@
     /* No styles */
 }
 
-#tray menu {
-    border-radius: 15px;
-}
-
 #window {
     font-weight: bold;
 }
 
 #workspaces button {
-    border-radius: 0px 10px 10px 0px;
     border-color: @primary;
-    border-left: 2px solid transparent;
     /* To compensate for the top border and still have vertical centering */
-    padding: 10px 7px 10px 5px;
+    margin: 10px;
     
     
     color: @surface0;
 }
 
-#workspaces button.active {
-    border-left: 2px solid;
-    border-color: @primary;
+#workspaces button.focused {
     color: @text;
-    background-color: @highlight;
 }
 #workspaces button:hover {
     color: @text;
+    background-color: @main;
 }
 
 
