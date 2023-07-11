@@ -1,4 +1,5 @@
 exec /usr/share/ublue-os/firstboot/launcher/autostart.sh
+exec blueman-applet
 exec nm-applet
 exec wl-paste --watch cliphist store
 
