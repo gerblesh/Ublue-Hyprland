@@ -3,7 +3,7 @@
 
 playerctl -a pause
 
-options="Screen Lock \nLogout 󰍃\nSleep 󰤄\nShutdown ⏻\nRestart "
+options="Screen Lock \nLogout 󰍃\nSleep 󰤄\nShutdown ⏻\nRestart \nBIOS "
 
 choice=$(printf "$options" | fuzzel --dmenu --prompt=" ⏻  " | awk '{print $1}')
 
@@ -28,4 +28,9 @@ case $choice in
     Logout)
         echo "Logout"
         loginctl terminate-user $USER
+        ;;
+    BIOS)
+        echo "entering UEFI firmware interface"
+        systemctl reboot --firmware-setup
+        ;;
 esac
