@@ -99,6 +99,8 @@
 }
 
 /* Each module */
+#idle_inhibitor,
+#mpris,
 #backlight,
 #battery,
 #clock,
@@ -114,7 +116,7 @@
     background-color: @main;
     /*margin: 1410px 0px 0px 10px;*/
     margin: 5px 5px;
-    /*padding: 30px 40px;*/
+    padding: 0px 5px;
 }
 
 
@@ -234,7 +236,9 @@
     background-color: @main;
 }
 
-
+#idle_inhibitor.deactivated {
+    color: @surface0
+}
 #workspaces button.urgent {
     border-color: #c9545d;
     color: #c9545d;

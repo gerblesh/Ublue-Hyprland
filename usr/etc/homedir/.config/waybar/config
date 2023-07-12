@@ -19,16 +19,17 @@
     "modules-left": [
         "tray",
         "sway/workspaces",
-        "sway/mode"
+        "sway/mode",
+        "mpris",
     ],
     "modules-center": [
-        "custom/clock"
+        "custom/clock",
     ],
     "modules-right": [
         "pulseaudio",
         "backlight",
         "battery",
-        "custom/media"
+        "idle_inhibitor",
     ],
 
 
@@ -176,18 +177,23 @@
         "format": "{icon} {percent}%",
         "format-icons": ["󰃞","󰃝", "󰃠"]
     },
-     "custom/media": {
-		"format": "{icon} {}",
-		"return-type": "json",
-		"max-length": 32,
-		"escape": true,
-		"format-icons": {
-			"default": " "
-		},
-		"on-click": "playerctl play-pause",
-		"on-click-forward": "playerctl next",
-		"on-click-backward": "playerctl previous",
-		"exec": "/home/user/.config/waybar/scripts/mediaplayer.py"
-   }
-
+   "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+        "activated": "",
+        "deactivated": ""
+        }
+    },
+"mpris": {
+    "format": "{player_icon} {dynamic}",
+    "format-paused": "{status_icon} {dynamic}",
+    "max-length": 32,
+    "player-icons": {
+        "default": "⏸",
+    },
+    "status-icons": {
+        "paused": "▶"
+    },
+    // "ignored-players": ["firefox"]
+}
 }
