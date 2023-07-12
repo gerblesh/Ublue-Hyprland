@@ -3,9 +3,9 @@
 
 playerctl -a pause
 
-options="Screen Lock \nLogout 󰍃\nSleep 󰤄\nShutdown ⏻\nRestart \nBIOS "
+options=" Screen Lock\n󰍃 Logout\n󰤄 Sleep\n⏻ Shutdown\n Restart\n BIOS"
 
-choice=$(printf "$options" | fuzzel --dmenu --prompt=" ⏻  " | awk '{print $1}')
+choice=$(printf "$options" | fuzzel --dmenu --prompt=" ⏻  " | awk '{print $2}')
 
 
 case $choice in
