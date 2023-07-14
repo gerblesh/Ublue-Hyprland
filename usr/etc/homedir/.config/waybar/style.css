@@ -37,8 +37,7 @@
 @define-color rosewater #f5e0dc;
 
 
-
-@define-color highlight @crust;
+@define-color shadow @mantle;
 @define-color main @base;
 @define-color primary @lavender;
 @define-color tertiary @surface0;
@@ -60,7 +59,7 @@
     }
 
     to {
-        color: @peach;
+        color: @yellow;
     }
 }
 
@@ -91,11 +90,11 @@
 
 /* The whole bar */
 #waybar {
-    background: @main;
     color: @text;
     font-family: OverpassMono Nerd Font;
     font-size: 20px;
-    border-bottom: solid 2px @primary;
+    border-bottom: 2px solid @shadow;
+    background-color: @main;
 }
 
 /* Each module */
@@ -113,10 +112,10 @@
 #temperature,
 #tray {
     border-radius: 0px;
-    background-color: @main;
+    background-color: rgba(0,0,0,0);
     /*margin: 1410px 0px 0px 10px;*/
-    margin: 5px 5px;
-    padding: 0px 5px;
+    margin: 0px 5px;
+    padding: 10px 5px;
 }
 
 
@@ -141,7 +140,7 @@
 }
 
 #battery.charging {
-    color: @green;
+    color: @primary;
 }
 
 #clock {
@@ -177,8 +176,8 @@
 }
 
 #mode {
-    background: #64727D;
-    border-top: 2px solid white;
+    background: @shadow;
+    border-top: 2px solid @primary;
     /* To compensate for the top border and still have vertical centering */
     padding-bottom: 2px;
 }
@@ -220,12 +219,8 @@
 }
 
 #workspaces button {
-    border-color: @primary;
-    /* To compensate for the top border and still have vertical centering */
-    margin: 10px;
-    
-    
-    color: @surface0;
+    padding: 10px;
+    color: @tertiary;
 }
 
 #workspaces button.focused {
@@ -237,7 +232,7 @@
 }
 
 #idle_inhibitor.deactivated {
-    color: @surface0
+    color: @tertiary
 }
 #workspaces button.urgent {
     border-color: #c9545d;
