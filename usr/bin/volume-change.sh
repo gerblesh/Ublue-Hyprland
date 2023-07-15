@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
 
+
 volume="$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2}')"
+
+volume_muted="$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $3}')"
 volume_percent=$(echo "$volume * 100" | bc | LC_ALL=C xargs /usr/bin/printf "%.*f\n" "$p")
+volume_string="$volume_percent $volume_muted"
 
 
 
@@ -12,4 +16,4 @@ notify-send \
     --hint string:x-canonical-private-synchronous:volume \
     --hint "int:value:$volume_percent" \
     --transient \
-    "Volume" "$volume_percent"
+    "Volume" "$volume_string"
