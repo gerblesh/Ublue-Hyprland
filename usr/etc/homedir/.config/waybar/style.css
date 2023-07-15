@@ -1,46 +1,5 @@
-/*
-*
-* Catppuccin Mocha palette
-* Maintainer: rubyowo
-*
-*/
+@import url("./colors.css");
 
-@define-color base   #1e1e2e;
-@define-color mantle #181825;
-@define-color crust  #11111b;
-
-@define-color text     #cdd6f4;
-@define-color subtext0 #a6adc8;
-@define-color subtext1 #bac2de;
-
-@define-color surface0 #313244;
-@define-color surface1 #45475a;
-@define-color surface2 #585b70;
-
-@define-color overlay0 #6c7086;
-@define-color overlay1 #7f849c;
-@define-color overlay2 #9399b2;
-
-@define-color blue      #89b4fa;
-@define-color lavender  #b4befe;
-@define-color sapphire  #74c7ec;
-@define-color sky       #89dceb;
-@define-color teal      #94e2d5;
-@define-color green     #a6e3a1;
-@define-color yellow    #f9e2af;
-@define-color peach     #fab387;
-@define-color maroon    #eba0ac;
-@define-color red       #f38ba8;
-@define-color mauve     #cba6f7;
-@define-color pink      #f5c2e7;
-@define-color flamingo  #f2cdcd;
-@define-color rosewater #f5e0dc;
-
-
-@define-color shadow @mantle;
-@define-color main @base;
-@define-color primary @lavender;
-@define-color tertiary @surface0;
 /* =============================================================================
  *
  * Waybar configuration
@@ -59,7 +18,7 @@
     }
 
     to {
-        color: @yellow;
+        color: @warning;
     }
 }
 
@@ -69,7 +28,7 @@
     }
 
     to {
-      color: @red;
+      color: @urgent;
     }
 }
 
@@ -85,7 +44,6 @@
     min-height: 0;
     margin: 0;
     padding: 0;
-    font-size: 20px;
 }
 
 /* The whole bar */
@@ -98,6 +56,8 @@
 }
 
 /* Each module */
+#custom-power-profile,
+#workspaces button,
 #idle_inhibitor,
 #mpris,
 #backlight,
@@ -112,8 +72,7 @@
 #temperature,
 #tray {
     border-radius: 0px;
-    background-color: rgba(0,0,0,0);
-    /*margin: 1410px 0px 0px 10px;*/
+    background-color: @transparent;
     margin: 0px 5px;
     padding: 10px 5px;
 }
@@ -143,6 +102,25 @@
     color: @primary;
 }
 
+#custom-power-profile.power-saver {
+    border-top: @urgent solid 2px;
+    color: @urgent;
+    background-color: @shadow;
+}
+
+#custom-power-profile.balanced {
+    border-top: @primary solid 2px;
+    color: @primary;
+    background-color: @shadow;
+}
+
+#custom-power-profile.performance {
+    border-top: @warning solid 2px;
+    color: @warning;
+    background-color: @shadow;
+}
+
+
 #clock {
     font-weight: bold;
 }
@@ -156,7 +134,7 @@
 }
 
 #cpu.critical {
-    color: @red;
+    color: @urgent;
 }
 
 #memory {
@@ -166,11 +144,11 @@
 }
 
 #memory.warning {
-    color: @peach;
+    color: @warning;
 }
 
 #memory.critical {
-    color: @red;
+    color: @urgent;
     animation-name: blink-critical;
     animation-duration: 2s;
 }
@@ -199,7 +177,7 @@
 }
 
 #custom-spotify {
-    color: rgb(102, 220, 105);
+    color: @primary;
 }
 
 #temperature {
@@ -207,7 +185,7 @@
 }
 
 #temperature.critical {
-    color: @red;
+    color: @urgent;
 }
 
 #tray {
@@ -219,7 +197,6 @@
 }
 
 #workspaces button {
-    padding: 10px;
     color: @tertiary;
 }
 
@@ -228,13 +205,12 @@
 }
 #workspaces button:hover {
     color: @text;
-    background-color: @main;
+    background-color: @transparent;
 }
 
 #idle_inhibitor.deactivated {
     color: @tertiary
 }
 #workspaces button.urgent {
-    border-color: #c9545d;
-    color: #c9545d;
+    color: @urgent;
 }

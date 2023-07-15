@@ -14,7 +14,7 @@
 
     "position": "top",
     // If height property would be not present, it'd be calculated dynamically
-    "height": 10,
+    "height": 48,
 
     "modules-left": [
         "tray",
@@ -28,6 +28,7 @@
     "modules-right": [
         "pulseaudio",
         "backlight",
+        "custom/power-profile",
         "battery",
         "idle_inhibitor",
     ],
@@ -119,7 +120,7 @@
     },
 
     "sway/mode": {
-        "format": "<span style=\"italic\">  {}</span>", // Icon: expand-arrows-alt
+        "format": "<span style=\"italic\">󰩨  {}</span>", // Icon: expand-arrows-alt
         "tooltip": false
     },
 
@@ -193,16 +194,24 @@
         "deactivated": ""
         }
     },
-"mpris": {
-    "format": "{player_icon} {title}",
-    "format-paused": "{status_icon} {title}",
-    "max-length": 32,
-    "player-icons": {
-        "default": "⏸",
+    "mpris": {
+        "format": "{player_icon} {title}",
+        "format-paused": "{status_icon} {title}",
+        "max-length": 32,
+        "player-icons": {
+            "default": "⏸",
+        },
+        "status-icons": {
+            "paused": "▶"
+        },
+        // "ignored-players": ["firefox"]
     },
-    "status-icons": {
-        "paused": "▶"
+    "custom/power-profile": {
+        "format": "{}",
+        "tooltip": true,
+        "return-type": "json",
+        "interval": 10,
+        "on-click": "$HOME/.config/waybar/scripts/powerprofile-menu.sh",
+        "exec": "$HOME/.config/waybar/scripts/powerprofile.sh",
     },
-    // "ignored-players": ["firefox"]
-}
 }
