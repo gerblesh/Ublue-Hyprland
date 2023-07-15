@@ -5,23 +5,20 @@ WALLPAPER_PATH=""
 DEFAULT_WALLPAPER="$HOME/Pictures/Wallpapers/Mocha/fedora.jpg"
 
 if [ ! -f "$HOME/.config/wallpaper" ]; then
-	echo "$DEFAULT_WALLPAPER" > "$HOME/.config/wallpaper"
+    echo "$DEFAULT_WALLPAPER" > "$HOME/.config/wallpaper"
 fi
 
 if [[ $1 == "init" ]]; then
-	WALLPAPER_PATH=`cat "$HOME/.config/wallpaper"`
+    WALLPAPER_PATH=$(cat "$HOME/.config/wallpaper")
 else
-# if no file exists, exit the script
-	if [ ! -f "$1" ]; then
-		echo "Error: No File Exists at $1"
-		exit 1
-	fi
-
-	PID=`pidof swaybg`
-	kill $PID
-# changing wallpaper config
-	echo "$1" > "$HOME/.config/wallpaper"
-	WALLPAPER_PATH="$1"
+    if [ ! -f "$1" ]; then
+        echo "Error: No File Exists at $1"
+        exit 1
+    fi
+    PID=$(pidof swaybg)
+    kill $PID
+    echo "$1" > "$HOME/.config/wallpaper"
+    WALLPAPER_PATH="$1"
 fi
 
 swaybg -i "$WALLPAPER_PATH" -m fill &

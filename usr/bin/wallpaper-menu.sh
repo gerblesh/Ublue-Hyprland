@@ -2,3 +2,5 @@
 NEW_WALLPAPER=`ls -1 "$HOME/Pictures/Wallpapers/Mocha" | fuzzel -d`
 
 "$HOME"/.local/bin/wallpaper "$HOME/Pictures/Wallpapers/Mocha/$NEW_WALLPAPER"
+
+
