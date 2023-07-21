@@ -34,7 +34,7 @@ COPY ./cosign.pub /usr/etc/pki/containers/cosign.pub
 COPY ./usr/etc/containers /usr/etc/
 
 RUN sed -i "s ghcr.io/ublue-os ${BASE_IMAGE_URL} g" /usr/etc/containers/policy.json
-RUN sed -i "s ghcr.io/ublue-os ${BASE_IMAGE_URL} g" /usr/etc/pki/containers/registries.d/cosign.yaml
+RUN sed -i "s ghcr.io/ublue-os ${BASE_IMAGE_URL} g" /usr/etc/containers/registries.d/cosign.yaml
 
 
 # Copy nix install script and Universal Blue wallpapers RPM from Bling image
