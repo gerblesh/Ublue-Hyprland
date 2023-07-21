@@ -30,10 +30,11 @@ COPY etc /etc
 # Copy the recipe that we're building.
 COPY ${RECIPE} /usr/share/ublue-os/recipe.yml
 
+
 COPY ./cosign.pub /usr/etc/pki/containers/cosign.pub
 COPY ./policy.json /usr/etc/containers/policy.json
 
-RUN sed "s ghcr.io/ublue-os ${BASE_IMAGE_URL} g" /usr/etc/containers/policy.json
+RUN sed -i "s ghcr.io/ublue-os ${BASE_IMAGE_URL} g" /usr/etc/containers/policy.json
 
 
 # Copy nix install script and Universal Blue wallpapers RPM from Bling image
