@@ -8,13 +8,13 @@
 ARG FEDORA_MAJOR_VERSION=38
 # Warning: changing this might not do anything for you. Read comment above.
 ARG BASE_IMAGE_URL=quay.io/fedora-ostree-desktops/base
-ARG IMAGE_REGISTRY=ghcr.io/ublue-os
 
 FROM ${BASE_IMAGE_URL}:${FEDORA_MAJOR_VERSION}
 
 # The default recipe set to the recipe's default filename
 # so that `podman build` should just work for many people.
 ARG RECIPE=./recipe.yml
+ARG IMAGE_REGISTRY=ghcr.io/ublue-os
 
 # Copy static configurations and component files.
 # Warning: If you want to place anything in "/etc" of the final image, you MUST
