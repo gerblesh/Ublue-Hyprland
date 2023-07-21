@@ -15,9 +15,6 @@ FROM ${BASE_IMAGE_URL}:${FEDORA_MAJOR_VERSION}
 # so that `podman build` should just work for many people.
 ARG RECIPE=./recipe.yml
 
-ARG IMAGE_REGISTRY=ghcr.io/ublue-os
-
-
 # Copy static configurations and component files.
 # Warning: If you want to place anything in "/etc" of the final image, you MUST
 # place them in "./usr/etc" in your repo, so that they're written to "/usr/etc"
@@ -29,7 +26,6 @@ COPY usr /usr
 
 # Copy the recipe that we're building.
 COPY ${RECIPE} /usr/share/ublue-os/recipe.yml
-
 
 COPY ./cosign.pub /usr/etc/pki/containers/cosign.pub
 COPY ./usr/etc/containers /usr/etc/
