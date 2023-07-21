@@ -8,6 +8,7 @@
 ARG FEDORA_MAJOR_VERSION=38
 # Warning: changing this might not do anything for you. Read comment above.
 ARG BASE_IMAGE_URL=quay.io/fedora-ostree-desktops/base
+ARG IMAGE_REGISTRY=ghcr.io/ublue-os
 
 FROM ${BASE_IMAGE_URL}:${FEDORA_MAJOR_VERSION}
 
