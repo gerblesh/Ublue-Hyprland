@@ -197,15 +197,19 @@
 }
 
 #workspaces button {
+    padding-top: 2px;
     color: @tertiary;
 }
 
+#workspaces button:hover,
 #workspaces button.focused {
-    color: @text;
+    color: @primary;
+    background-color: @shadow;
 }
-#workspaces button:hover {
-    color: @text;
-    background-color: @transparent;
+
+#workspaces button.focused {
+    padding-top: 0px;
+    border-top: solid 2px @primary;
 }
 
 #idle_inhibitor.deactivated {
