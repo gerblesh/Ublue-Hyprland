@@ -25,16 +25,16 @@ ARG IMAGE_REGISTRY=ghcr.io/ublue-os
 # for manual overrides and editing by the machine's admin AFTER installation!
 # See issue #28 (https://github.com/ublue-os/startingpoint/issues/28).
 COPY usr /usr
-COPY etc /etc
 
 # Copy the recipe that we're building.
 COPY ${RECIPE} /usr/share/ublue-os/recipe.yml
 
 
 COPY ./cosign.pub /usr/etc/pki/containers/cosign.pub
-COPY ./policy.json /usr/etc/containers/policy.json
+COPY ./usr/etc/containers /usr/etc/
 
 RUN sed -i "s ghcr.io/ublue-os ${BASE_IMAGE_URL} g" /usr/etc/containers/policy.json
+RUN sed -i "s ghcr.io/ublue-os ${BASE_IMAGE_URL} g" /usr/etc/pki/containers/registries.d/cosign.yaml
 
 
 # Copy nix install script and Universal Blue wallpapers RPM from Bling image
