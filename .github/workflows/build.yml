@@ -130,6 +130,8 @@ jobs:
       - name: Build Image
         id: build_image
         uses: redhat-actions/buildah-build@v2
+        env:
+          IMAGE_REGISTRY: ${{ steps.registry_case.outputs.lowercase }}
         with:
           containerfiles: |
             ./Containerfile
@@ -140,7 +142,6 @@ jobs:
             FEDORA_MAJOR_VERSION=${{ env.FEDORA_MAJOR_VERSION }}
             BASE_IMAGE_URL=${{ env.BASE_IMAGE_URL }}
             RECIPE=${{ matrix.recipe }}
-            IMAGE_REGISTRY=${{ steps.registry_case.outputs.lowercase }}
           labels: ${{ steps.meta.outputs.labels }}
           oci: false
 
