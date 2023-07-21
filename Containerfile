@@ -34,11 +34,6 @@ COPY ${RECIPE} /usr/share/ublue-os/recipe.yml
 COPY ./cosign.pub /usr/etc/pki/containers/cosign.pub
 COPY ./usr/etc/containers /usr/etc/
 
-
-RUN IMAGE_REGISTRY=${IMAGE_REGISTRY} && \
-        sed -i 's ghcr.io/ublue-os "$IMAGE_REGISTRY" g' /usr/etc/containers/policy.json && \
-        sed -i 's ghcr.io/ublue-os "$IMAGE_REGISTRY" g' /usr/etc/containers/registries.d/cosign.yaml
-
 RUN cat /usr/etc/containers/policy.json
 
 # Copy nix install script and Universal Blue wallpapers RPM from Bling image
