@@ -206,6 +206,7 @@
 #workspaces button:hover,
 #workspaces button.focused {
     background-color: @shadow;
+    transition: all 0.3s;
 }
 
 #idle_inhibitor.deactivated {
