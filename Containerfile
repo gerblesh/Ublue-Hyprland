@@ -17,12 +17,6 @@ ARG RECIPE=./recipe.yml
 
 ARG IMAGE_REGISTRY=ghcr.io/ublue-os
 
-ARG IMAGE_NAME=my-ublue
-
-RUN sed "s ghcr.io/ublue-os ${BASE_IMAGE_URL} g" policy.json
-
-COPY ./cosign.pub /usr/etc/pki/containers/cosign.pub
-
 # Copy static configurations and component files.
 # Warning: If you want to place anything in "/etc" of the final image, you MUST
 # place them in "./usr/etc" in your repo, so that they're written to "/usr/etc"
@@ -36,7 +30,12 @@ COPY etc /etc
 # Copy the recipe that we're building.
 COPY ${RECIPE} /usr/share/ublue-os/recipe.yml
 
-COPY ./cosign.pub /usr/etc/pki/
+COPY ./cosign.pub /usr/etc/pki/containers/cosign.pub
+COPY ./policy.json /usr/etc/containers/policy.json
+
+RUN sed "s ghcr.io/ublue-os ${BASE_IMAGE_URL} g" /usr/etc/containers/policy.json
+
+
 # Copy nix install script and Universal Blue wallpapers RPM from Bling image
 #COPY --from=ghcr.io/ublue-os/bling:latest /rpms/ublue-os-wallpapers-0.1-1.fc38.noarch.rpm /tmp/ublue-os-wallpapers-0.1-1.fc38.noarch.rpm
 
