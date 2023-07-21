@@ -74,7 +74,7 @@
     border-radius: 0px;
     background-color: @transparent;
     margin: 0px 5px;
-    padding: 10px 5px;
+    padding: 5px 5px;
 }
 
 
@@ -101,25 +101,6 @@
 #battery.charging {
     color: @primary;
 }
-
-#custom-power-profile.power-saver {
-    border-top: @urgent solid 2px;
-    color: @urgent;
-    background-color: @shadow;
-}
-
-#custom-power-profile.balanced {
-    border-top: @primary solid 2px;
-    color: @primary;
-    background-color: @shadow;
-}
-
-#custom-power-profile.performance {
-    border-top: @warning solid 2px;
-    color: @warning;
-    background-color: @shadow;
-}
-
 
 #clock {
     font-weight: bold;
@@ -153,11 +134,33 @@
     animation-duration: 2s;
 }
 
+#custom-power-profile,
+#workspaces button.focused,
+#mpris,
 #mode {
+    color: @text;
     background: @shadow;
     border-top: 2px solid @primary;
     /* To compensate for the top border and still have vertical centering */
-    padding-bottom: 2px;
+    padding-bottom: 7px;
+}
+
+#custom-power-profile.power-saver {
+    color: @urgent;
+    background-color: @shadow;
+    border-top: 2px solid @urgent;
+}
+
+#custom-power-profile.balanced {
+    color: @primary;
+    background-color: @shadow;
+    border-top: 2px solid @primary;
+}
+
+#custom-power-profile.performance {
+    color: @warning;
+    background-color: @shadow;
+    border-top: 2px solid @warning;
 }
 
 #network {
@@ -197,19 +200,12 @@
 }
 
 #workspaces button {
-    padding-top: 2px;
     color: @tertiary;
 }
 
 #workspaces button:hover,
 #workspaces button.focused {
-    color: @primary;
     background-color: @shadow;
-}
-
-#workspaces button.focused {
-    padding-top: 0px;
-    border-top: solid 2px @primary;
 }
 
 #idle_inhibitor.deactivated {

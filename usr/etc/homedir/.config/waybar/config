@@ -195,8 +195,8 @@
         }
     },
     "mpris": {
-        "format": "{player_icon} {title}",
-        "format-paused": "{status_icon} {title}",
+        "format": "󰝚  {player_icon} {title}",
+        "format-paused": "󰝚  {status_icon} {title}",
         "max-length": 32,
         "player-icons": {
             "default": "⏸",
