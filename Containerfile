@@ -14,6 +14,7 @@ FROM ${BASE_IMAGE_URL}:${FEDORA_MAJOR_VERSION}
 # The default recipe set to the recipe's default filename
 # so that `podman build` should just work for many people.
 ARG RECIPE=./recipe.yml
+
 # The default image registry to write to policy.json and cosign.yaml
 ARG IMAGE_REGISTRY=ghcr.io/ublue-os
 
@@ -26,11 +27,13 @@ ARG IMAGE_REGISTRY=ghcr.io/ublue-os
 # See issue #28 (https://github.com/ublue-os/startingpoint/issues/28).
 COPY usr /usr
 
+# Copy public key
+COPY cosign.pub /usr/etc/pki/containers/cosign.pub
+# Copy base signing config
+COPY usr/etc/containers /usr/etc/
+
 # Copy the recipe that we're building.
 COPY ${RECIPE} /usr/share/ublue-os/recipe.yml
-
-COPY ./cosign.pub /usr/etc/pki/containers/cosign.pub
-COPY ./usr/etc/containers /usr/etc/
 
 # Copy nix install script and Universal Blue wallpapers RPM from Bling image
 #COPY --from=ghcr.io/ublue-os/bling:latest /rpms/ublue-os-wallpapers-0.1-1.fc38.noarch.rpm /tmp/ublue-os-wallpapers-0.1-1.fc38.noarch.rpm
