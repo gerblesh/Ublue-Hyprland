@@ -14,6 +14,7 @@ FROM ${BASE_IMAGE_URL}:${FEDORA_MAJOR_VERSION}
 # The default recipe set to the recipe's default filename
 # so that `podman build` should just work for many people.
 ARG RECIPE=./recipe.yml
+# The default image registry to write to policy.json and cosign.yaml
 ARG IMAGE_REGISTRY=ghcr.io/ublue-os
 
 # Copy static configurations and component files.
