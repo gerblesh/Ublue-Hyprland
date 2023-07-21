@@ -56,6 +56,7 @@ rpm:
   # at the "system level" in the final image.
   install:
     - sway
+    - xdg-desktop-portal-wlr
     - waybar
     - xorg-x11-server-Xwayland
     - xdg-user-dirs
