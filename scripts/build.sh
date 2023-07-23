@@ -110,7 +110,7 @@ echo "Setup container signing in policy.json and cosign.yaml"
 echo "Registry to write: $IMAGE_REGISTRY"
 
 # Copy Name
-NAME=$(get_yaml_string 'name')
+NAME=$(get_yaml_string '.name')
 cp /usr/share/ublue-os/cosign.pub /usr/etc/pki/containers/"$NAME".pub
 
 # Work around the fact that jq doesn't have an "inplace" option
