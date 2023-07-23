@@ -113,7 +113,7 @@ echo "Registry to write: $IMAGE_REGISTRY"
 FILE=/usr/etc/containers/policy.json
 TMP=/tmp/policy.json
 
-jq '.transports.docker."${IMAGE_REGISTRY}" += [{
+jq '.transports.docker."$IMAGE_REGISTRY" += [{
     "type": "sigstoreSigned",
     "keyPath": "/usr/etc/pki/containers/cosign.pub",
     "signedIdentity": {
