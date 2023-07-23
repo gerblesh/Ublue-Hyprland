@@ -117,7 +117,7 @@ POLICY=$(jq '.transports.docker."${IMAGE_REGISTRY}" += [{
     }
 }]' /usr/etc/containers/policy.json)
 
-printf $POLICY > /usr/etc/containers/policy.json
+echo -e $POLICY > /usr/etc/containers/policy.json
 
 cat /usr/etc/containers/policy.json
 
