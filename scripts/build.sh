@@ -109,15 +109,15 @@ fi
 echo "Setup container signing in policy.json and cosign.yaml"
 echo "Registry to write: $IMAGE_REGISTRY"
 
-POLICY=$(jq '.transports.docker."${IMAGE_REGISTRY}" |=[{
+POLICY=$(jq '.transports.docker."${IMAGE_REGISTRY}" += [{
     "type": "sigstoreSigned",
     "keyPath": "/usr/etc/pki/containers/cosign.pub",
     "signedIdentity": {
         "type": "matchRepository"
     }
-}] + .' /usr/etc/containers/policy.json)
+}]' /usr/etc/containers/policy.json)
 
-echo $POLICY > /usr/etc/containers/policy.json
+printf $POLICY > /usr/etc/containers/policy.json
 
 cat /usr/etc/containers/policy.json
 
