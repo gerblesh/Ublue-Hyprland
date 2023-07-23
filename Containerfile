@@ -29,8 +29,6 @@ COPY usr /usr
 
 # Copy public key
 COPY cosign.pub /usr/etc/pki/containers/cosign.pub
-# Copy base signing config
-COPY usr/etc/containers /usr/etc/
 
 # Copy the recipe that we're building.
 COPY ${RECIPE} /usr/share/ublue-os/recipe.yml
@@ -46,6 +44,7 @@ COPY ${RECIPE} /usr/share/ublue-os/recipe.yml
 
 # Copy the udev rules individually
 COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-udev-rules.noarch.rpm /tmp/rpms/
+COPY --from=ghcr.io/ublue-os/config:latest /rpms/ublue-os-signing.noarch.rpm /tmp/rpms/
 
 # Copy ublue-update
 COPY --from=ghcr.io/ublue-os/ublue-update:latest /rpms/ublue-update.noarch.rpm /tmp/rpms/
