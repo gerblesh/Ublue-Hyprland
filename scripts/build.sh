@@ -117,15 +117,16 @@ cp /usr/share/ublue-os/cosign.pub /usr/etc/pki/containers/"$NAME".pub
 FILE=/usr/etc/containers/policy.json
 TMP=/tmp/policy.json
 
-jq '.transports.docker."$IMAGE_REGISTRY" += [{
+jq '.transports.docker."'"$IMAGE_REGISTRY"'" += [{
     "type": "sigstoreSigned",
-    "keyPath": "/usr/etc/pki/containers/$NAME.pub",
+    "keyPath": "/usr/etc/pki/containers/'"$NAME"'.pub",
     "signedIdentity": {
         "type": "matchRepository"
     }
 }]' $FILE > $TMP
 
 mv -f $TMP $FILE
+
 
 cat $FILE
 
