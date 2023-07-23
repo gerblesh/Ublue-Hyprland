@@ -130,7 +130,7 @@ mv -f $TMP $FILE
 cat $FILE
 
 cp /usr/etc/containers/registries.d/ublue-os.yaml /usr/etc/containers/registries.d/"$NAME".yaml
-sed -i "s ghcr.io/ublue-os $IMAGE_REGISTRY g" /usr/etc/containers/registries.d/"$NAME.yaml
+sed -i "s ghcr.io/ublue-os $IMAGE_REGISTRY g" /usr/etc/containers/registries.d/"$NAME".yaml
 
 # Run "post" scripts.
 run_scripts "post"
