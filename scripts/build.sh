@@ -120,8 +120,5 @@ jq '.transports.docker."$IMAGE_REGISTRY" += [{
 cp /usr/etc/containers/registries.d/ublue-os.yaml /usr/etc/containers/registries.d/cosign.yaml
 sed -i "s ghcr.io/ublue-os $IMAGE_REGISTRY g" /usr/etc/containers/registries.d/cosign.yaml
 
-cat /usr/etc/containers/registries.d/cosign.yaml
-cat /usr/etc/containers/policy.json
-
 # Run "post" scripts.
 run_scripts "post"
