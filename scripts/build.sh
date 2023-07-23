@@ -109,13 +109,19 @@ fi
 echo "Setup container signing in policy.json and cosign.yaml"
 echo "Registry to write: $IMAGE_REGISTRY"
 
-POLICY=$(jq '.transports.docker."${IMAGE_REGISTRY}" += [{
+# Work around the fact that jq doesn't have an "inplace" option
+FILE=/usr/etc/containers/policy.json
+TMP=/tmp/policy.json
+
+jq '.transports.docker."${IMAGE_REGISTRY}" += [{
     "type": "sigstoreSigned",
     "keyPath": "/usr/etc/pki/containers/cosign.pub",
     "signedIdentity": {
         "type": "matchRepository"
     }
-}]' /usr/etc/containers/policy.json)
+}]' $FILE > $TMP
+
+mv -f $TMP $FILE
 
 echo -e $POLICY > /usr/etc/containers/policy.json
 
