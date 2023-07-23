@@ -115,7 +115,7 @@ jq '.transports.docker."$IMAGE_REGISTRY" += [{
 "signedIdentity": {
         "type": "matchRepository"
 }
-}]' /etc/containers/policy.json > /etc/containers/policy.json
+}]' /usr/etc/containers/policy.json > /usr/etc/containers/policy.json
 
 cp /usr/etc/containers/registries.d/ublue-os.yaml /usr/etc/containers/registries.d/cosign.yaml
 sed -i "s ghcr.io/ublue-os $IMAGE_REGISTRY g" /usr/etc/containers/registries.d/cosign.yaml
