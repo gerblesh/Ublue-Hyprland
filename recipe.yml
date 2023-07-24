@@ -108,6 +108,7 @@ rpm:
     - light
     - fish
     - wtype
+    - sddm
     - papirus-icon-theme
     # audio
     - pipewire
