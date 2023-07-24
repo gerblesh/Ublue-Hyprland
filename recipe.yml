@@ -104,8 +104,10 @@ rpm:
     # fonts
     - overpass-fonts
     - overpass-mono-fonts
+    # config deps
     - light
     - fish
+    - wtype
     - papirus-icon-theme
     # audio
     - pipewire
