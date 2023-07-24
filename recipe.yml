@@ -108,7 +108,7 @@ rpm:
     - light
     - fish
     - wtype
-    - sddm
+    - sddm-wayland-sway
     - papirus-icon-theme
     # audio
     - pipewire
