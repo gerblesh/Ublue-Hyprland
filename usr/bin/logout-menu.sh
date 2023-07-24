@@ -5,31 +5,32 @@ playerctl -a pause
 
 options=" Screen Lock\n󰍃 Logout\n󰤄 Sleep\n⏻ Shutdown\n Restart\n BIOS"
 
-choice=$(printf "$options" | fuzzel --dmenu --prompt=" Goodbye!  " | awk '{print $2}')
+choice=$(printf "$options" | fuzzel --dmenu --index --prompt=" Goodbye!  ")
 
+echo $choice
 
 case $choice in
-    Shutdown)
-        echo "Shutting down.."
-        systemctl poweroff 
-        ;;
-    Restart)
-        echo "Restarting!"
-        systemctl reboot 
-        ;;
-    Screen)
-        echo "Screenlock!"
+    0)
+        echo "Screenlock"
         /usr/bin/lock.sh 
         ;;
-    Sleep)
-        echo "Suspend"
-        systemctl suspend
-        ;;
-    Logout)
+    1)
         echo "Logout"
         loginctl terminate-user $USER
         ;;
-    BIOS)
+    2)
+        echo "Suspend"
+        systemctl suspend
+        ;;
+    3)
+        echo "Shutting down.."
+        systemctl poweroff 
+        ;;
+    4)
+        echo "Restarting"
+        systemctl reboot 
+        ;;
+    5)
         echo "entering UEFI firmware interface"
         systemctl reboot --firmware-setup
         ;;
