@@ -13,5 +13,5 @@ filter='.[] | (.emoji + " " + .description + " (" + (.aliases | join(", ")) + ")
 sel="$(jq -r "$filter" <"$data_file" | fuzzel --dmenu --prompt " Select Emoji:  " | cut -d ' ' -f 1 | tr -d '\n')"
 if [ -n "$sel" ]; then
     wl-copy "$sel"
-    sleep 0.2 && wtype "$sel"
+    wtype "$sel"
 fi
