@@ -111,9 +111,13 @@ screens:
           default: true
           packages:
             - Bottles: com.usebottles.bottles
+<<<<<<< HEAD
+=======
+            - Discord: com.discordapp.Discord
+>>>>>>> 116e53a9e6bc183f174b06f8b54204be8d03dfab
             - Heroic Games Launcher: com.heroicgameslauncher.hgl
             - Steam: com.valvesoftware.Steam
-            - Gamescope (Utility): com.valvesoftware.Steam.Utility.gamescope
+            - Gamescope (Utility): org.freedesktop.Platform.VulkanLayer.gamescope
             - MangoHUD (Utility): org.freedesktop.Platform.VulkanLayer.MangoHud//22.08
             - SteamTinkerLaunch (Utility): com.valvesoftware.Steam.Utility.steamtinkerlaunch
             - Proton Updater for Steam: net.davidotek.pupgui2
