@@ -14,7 +14,7 @@
 
 @keyframes blink-warning {
     70% {
-        color: @text;
+        color: @primary;
     }
 
     to {
@@ -24,7 +24,7 @@
 
 @keyframes blink-critical {
     10% {
-      color: @text;
+      color: @primary;
     }
 
     to {
@@ -71,10 +71,13 @@
 #pulseaudio,
 #temperature,
 #tray {
+    /*color: @text;*/
     border-radius: 0px;
     background-color: @transparent;
     margin: 0px 5px;
     padding: 5px 5px;
+    padding-bottom: 7px;
+    border-top: 2px solid @transparent;
 }
 
 
@@ -99,11 +102,16 @@
 }
 
 #battery.charging {
+    color: @complete;
+}
+
+#battery {
     color: @primary;
 }
 
 #clock {
     font-weight: bold;
+    color: @tertiary;
 }
 
 #cpu {
@@ -134,33 +142,16 @@
     animation-duration: 2s;
 }
 
-#custom-power-profile,
-#workspaces button.focused,
-#mpris,
-#mode {
-    color: @text;
-    background: @shadow;
-    border-top: 2px solid @primary;
-    /* To compensate for the top border and still have vertical centering */
-    padding-bottom: 7px;
-}
-
 #custom-power-profile.power-saver {
     color: @urgent;
-    background-color: @shadow;
-    border-top: 2px solid @urgent;
 }
 
 #custom-power-profile.balanced {
     color: @primary;
-    background-color: @shadow;
-    border-top: 2px solid @primary;
 }
 
 #custom-power-profile.performance {
     color: @warning;
-    background-color: @shadow;
-    border-top: 2px solid @warning;
 }
 
 #network {
@@ -171,16 +162,17 @@
     color: orange;
 }
 
+#mpris {
+    color: @primary
+}
+
 #pulseaudio {
-    /* No styles */
+    color: @tertiary;
+    
 }
 
 #pulseaudio.muted {
     /* No styles */
-}
-
-#custom-spotify {
-    color: @primary;
 }
 
 #temperature {
@@ -192,25 +184,36 @@
 }
 
 #tray {
-    /* No styles */
+    color: @primary;
 }
 
 #window {
     font-weight: bold;
 }
+#idle_inhibitor.activated,
+#mode,
+#backlight {
+    color: @secondary;
+}
 
 #workspaces button {
-    color: @tertiary;
+    color: @unfocused;
 }
 
 #workspaces button:hover,
 #workspaces button.focused {
-    background-color: @shadow;
     transition: all 0.3s;
 }
 
+#workspaces button.focused {
+    padding-right: 14px;
+    padding-left: 14px;
+    color: @primary
+}
+
+
 #idle_inhibitor.deactivated {
-    color: @tertiary
+    color: @unfocused;
 }
 #workspaces button.urgent {
     color: @urgent;

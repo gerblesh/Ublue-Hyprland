@@ -22,3 +22,10 @@ border-color=#f38ba8
 [actionable]
 border-color=#b4befe
 
+[category="volume"]
+border-color=#89b4fa
+text-color=#89b4fa
+
+[category="backlight"]
+border-color=#94e2d5
+text-color=#94e2d5

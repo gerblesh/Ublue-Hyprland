@@ -15,5 +15,6 @@ notify-send \
     --expire-time 800 \
     --hint string:x-canonical-private-synchronous:volume \
     --hint "int:value:$volume_percent" \
+    --hint "string:category:volume" \
     --transient \
     "Volume" "$volume_string"

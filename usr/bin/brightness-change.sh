@@ -7,5 +7,6 @@ notify-send \
     --expire-time 800 \
     --hint string:x-canonical-private-synchronous:volume \
     --hint "int:value:$brightness_percent" \
+    --hint "string:category:backlight" \
     --transient \
     "Brightness" "$brightness_percent"
