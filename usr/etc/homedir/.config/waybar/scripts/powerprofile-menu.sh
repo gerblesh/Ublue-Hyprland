@@ -1,15 +1,17 @@
 #!/usr/bin/env bash
 
-CHOICE=$(printf "󰾆 Power Saver\n󰾅 Balanced\n󰓅 Performance" | fuzzel --dmenu --prompt " Select Power Profile:  " | awk '{print $2}')
+CHOICE=$(printf "󰾆 Power Saver\n󰾅 Balanced\n󰓅 Performance" | fuzzel --dmenu --index --prompt " Select Power Profile:  ")
 
 case "$CHOICE" in
-    Power)
+    0)
         powerprofilesctl set power-saver
         ;;
-    Balanced)
+    1)
         powerprofilesctl set balanced
         ;;
-    Performance)
+    2)
         powerprofilesctl set performance
         ;;
 esac
+
+

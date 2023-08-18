@@ -8,11 +8,12 @@ font=Overpass: 15
 border-radius=0
 default-timeout=7000
 progress-color=#313244
-#padding=25,20,20
+padding=15
 #anchor=bottom-right
 #text-alignment=center
 height=150
 width=450
+max-icon-size=100
 icon-path=/usr/share/icons/Papirus/:/usr/share/icons/Adwaita
 on-button-left=exec makoctl menu -n "$id" fuzzel -d --prompt 'Select action: ' && makoctl dismiss -n "$id"
 

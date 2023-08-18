@@ -195,16 +195,21 @@
         }
     },
     "mpris": {
-        "format": "󰝚  {player_icon} {title}",
-        "format-paused": "󰝚  {status_icon} {title}",
+        "format": "{player_icon} {title}",
+        "format-paused": "{player_icon} {title}",
         "max-length": 32,
         "player-icons": {
-            "default": "⏸",
+            "default": " ",
+            "G4Music": "󰝚",
+            "Spot": "󰝚",
+            "mpv": "󰸬",
         },
         "status-icons": {
-            "paused": "▶"
+            "paused": "▶",
+            "playing": "⏸"
         },
-        // "ignored-players": ["firefox"]
+        "ignored-players": [],
+        "interval": 1
     },
     "custom/power-profile": {
         "format": "{}",

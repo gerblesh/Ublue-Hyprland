@@ -102,7 +102,7 @@
 }
 
 #battery.charging {
-    color: @complete;
+    color: @secondary;
 }
 
 #battery {
