@@ -2,7 +2,7 @@
 
 WALLPAPER_PATH=""
 # Default Wallpaper, feel free to change this to whatever you like
-DEFAULT_WALLPAPER="$HOME/Pictures/Wallpapers/Mocha/fedora.jpg"
+DEFAULT_WALLPAPER="$HOME/Pictures/Wallpapers/Mocha/mocha-background.jpg"
 
 if [ ! -f "$HOME/.config/wallpaper" ]; then
     echo "$DEFAULT_WALLPAPER" > "$HOME/.config/wallpaper"
@@ -21,5 +21,7 @@ else
     WALLPAPER_PATH="$1"
 fi
 
-swaybg -i "$WALLPAPER_PATH" -m fill &
+FULL_WALLPAPER_PATH="${WALLPAPER_PATH/#\~/$HOME}"
+
+swaybg -i "$FULL_WALLPAPER_PATH" -m fill &
 

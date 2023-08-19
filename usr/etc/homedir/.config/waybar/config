@@ -130,21 +130,9 @@
     },
 
     "sway/workspaces": {
-        "on-scroll-up": "hyprctl dispatch workspace e+1",
-        "on-scroll-down": "hyprctl dispatch workspace e-1",
         "all-outputs": true,
         "on-click": "activate",
-        "format": "{name}",
-        "format-icons": {
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": "",
-            "5": "",
-            "urgent": "",
-            "active": "",
-            "default": ""
-          }
+        "format": "{value}",
     },
 
     "pulseaudio": {

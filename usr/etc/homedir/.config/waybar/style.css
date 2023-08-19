@@ -44,12 +44,13 @@
     min-height: 0;
     margin: 0;
     padding: 0;
+    font-weight: 600;
 }
 
 /* The whole bar */
 #waybar {
     color: @text;
-    font-family: OverpassMono Nerd Font;
+    font-family: Cantarell, Overpass Nerd Font;
     font-size: 20px;
     border-bottom: 2px solid @shadow;
     background-color: @main;
@@ -110,7 +111,6 @@
 }
 
 #clock {
-    font-weight: bold;
     color: @tertiary;
 }
 
@@ -188,7 +188,7 @@
 }
 
 #window {
-    font-weight: bold;
+    /*no styles*/
 }
 #idle_inhibitor.activated,
 #mode,
