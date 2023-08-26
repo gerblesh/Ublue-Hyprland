@@ -7,5 +7,6 @@ end
 
 alias mpv="flatpak run io.mpv.Mpv"
 alias ls="exa --icons --sort type"
+alias just="just --unstable -f $HOME/.config/just/justfile"
 set PATH "$HOME"/.local/bin:$PATH
 

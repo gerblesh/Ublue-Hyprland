@@ -1,5 +1,5 @@
 default:
-    @just --list
+  @just --list
 
 setup-distrobox:
   echo "Setting up distrobox git ..."

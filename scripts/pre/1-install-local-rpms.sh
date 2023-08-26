@@ -5,6 +5,8 @@
 # builds actually ran successfully without any errors!
 set -oue pipefail
 
+rpm-ostree override remove jack-audio-connection-kit
+
 # fetch mullvad vpn RPM
 curl -Lo /tmp/rpms/mullvad-vpn.rpm https://mullvad.net/en/download/app/rpm/latest --max-redirs 1
 
