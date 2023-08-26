@@ -9,5 +9,12 @@ if [ ! -f "$HOME"/.config/ublue-firstboot ]; then
 
     sed -i " 1 d" "$HOME"/.config/sway/config
 
+    mkdir -p "$HOME"/.config/just
+    cp -r /usr/share/ublue-os/just/custom.just "$HOME"/.config/just/justfile
+
+    cp -r /usr/etc/homedir/.* "$HOME"/
+    cp -r /usr/etc/homedir/* "$HOME"/
+
     /usr/bin/yafti /usr/share/ublue-os/firstboot/yafti.yml
 fi
+
