@@ -123,6 +123,10 @@ rpm:
     - distrobox
     # git askpass
     - ksshaskpass
+  # Create these symlinks ../../usr/lib/opt/[name here] in /opt/[name here] to fix installing packages that add files to /opt while building the image
+  optfix:
+    - Mullvad VPN
+
 
   # These RPMs will be removed from the system image. This step happens during
   # image build, BEFORE installing custom RPMs (from the "rpm.install" category).

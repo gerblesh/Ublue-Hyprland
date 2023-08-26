@@ -6,7 +6,7 @@
 set -oue pipefail
 
 # fetch mullvad vpn RPM
-# wget -O /tmp/rpms/mullvad-vpn.rpm https://mullvad.net/en/download/app/rpm/latest
+curl -Lo /tmp/rpms/mullvad-vpn.rpm https://mullvad.net/en/download/app/rpm/latest --max-redirs 1
 
 echo "Installing RPMS from /tpm/rpms"
 # install rpms from /tmp/rpms
