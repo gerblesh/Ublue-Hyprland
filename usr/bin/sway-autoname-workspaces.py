@@ -26,7 +26,8 @@ WINDOW_ICONS = {
     "mpv": "󰈫",
     "imv": "",
     "com.obsproject.Studio": "󰑋",
-    "obsidian": "󱓧"
+    "obsidian": "󱓧",
+    "mullvad vpn": "󰒄"
 }
 
 DEFAULT_ICON = ""
