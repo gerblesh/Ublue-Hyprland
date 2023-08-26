@@ -140,6 +140,8 @@ rpm:
     # replaced with distrobox
     - toolbox
     - sway-config-fedora
+    - dunst
+    - rofi-wayland
 
 # Configuration for the "first boot" experience, which is available after login.
 firstboot:
