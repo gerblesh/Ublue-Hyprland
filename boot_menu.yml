@@ -1,5 +1,5 @@
 ublue_variants:
-  - label: ublue-os/startingpoint
+  - label: gerblesh/usway
     ks: /kickstart/ublue-os.ks
     flavors:
-      - label: startingpoint
+      - label: usway
