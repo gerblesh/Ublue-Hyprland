@@ -16,7 +16,7 @@ case $choice in
         ;;
     1)
         echo "Logout"
-        loginctl terminate-user $USER
+        swaymsg exit
         ;;
     2)
         echo "Suspend"
@@ -35,3 +35,4 @@ case $choice in
         systemctl reboot --firmware-setup
         ;;
 esac
+
