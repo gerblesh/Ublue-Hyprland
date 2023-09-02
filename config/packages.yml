@@ -1,4 +1,4 @@
-- type: rpm-ostree
+type: rpm-ostree
   repos: 
     # - https://copr.fedorainfracloud.org/coprs/atim/starship/repo/fedora-%OS_VERSION%/atim-starship-fedora-%OS_VERSION%.repo
   install:
@@ -53,6 +53,10 @@
     # fonts
     - overpass-fonts
     - overpass-mono-fonts
+    - google-noto-emoji-fonts
+    - google-noto-fonts-common
+    - google-roboto-fonts
+    - google-noto-sans-fonts
     # config deps
     - light
     - fish
