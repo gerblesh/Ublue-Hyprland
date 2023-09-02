@@ -103,10 +103,9 @@ modules:
 
   - type: yafti # if included, https://github.com/ublue-os/yafti will be installed and set up
     custom-flatpaks: # this section is optional
-      - org.freedesktop.Platform.ffmpeg-full/x86_64/22.08
-      - io.mpv.Mpv
-      - org.kde.kwalletmanager5
-      - org.gtk.Gtk3theme.adw-gtk3-dark
+      - MPV: io.mpv.Mpv
+      - KWallet: org.kde.kwalletmanager5
+      - adw-gtk3 Theme: org.gtk.Gtk3theme.adw-gtk3-dark
 
   - type: script
     scripts:
