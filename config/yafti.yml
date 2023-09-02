@@ -3,3 +3,4 @@ type: yafti # if included, https://github.com/ublue-os/yafti will be installed a
     - Mpv (Media Player): io.mpv.Mpv
     - KWallet (Git Askpass): org.kde.kwalletmanager5
     - adw-gtk3 (GTK Theme): org.gtk.Gtk3theme.adw-gtk3-dark
+
