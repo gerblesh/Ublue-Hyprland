@@ -1,0 +1,32 @@
+# Colors
+
+background-color=#1e1e2eff
+text-color=#cdd6f4
+border-color=#313244
+#progress-color=over #313244
+font=Overpass: 15
+border-radius=0
+default-timeout=7000
+progress-color=#313244
+padding=15
+#anchor=bottom-right
+#text-alignment=center
+height=150
+width=450
+max-icon-size=100
+icon-path=/usr/share/icons/Papirus/:/usr/share/icons/Adwaita
+on-button-left=exec makoctl menu -n "$id" fuzzel -d --prompt 'Select action: ' && makoctl dismiss -n "$id"
+
+[urgency=high]
+border-color=#f38ba8
+
+[actionable]
+border-color=#b4befe
+
+[category="volume"]
+border-color=#89b4fa
+text-color=#89b4fa
+
+[category="backlight"]
+border-color=#94e2d5
+text-color=#94e2d5
