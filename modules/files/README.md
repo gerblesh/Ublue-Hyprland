@@ -6,10 +6,10 @@ The files are located in `config/files`
 Don't use /var or /etc as directories to copy to, as those are writable directories, instead use /usr/etc for /etc, and use workarounds for /var
 
 Example:
-```
+```yaml
 type: files
   files:
-    usr: /usr
+    usr: /usr # the key is the file/directory inside of `config/files`, and the value is the file/directory on the image
 ```
 
 
