@@ -3,7 +3,7 @@
 # Tell build process to exit if there are any errors.
 set -oue pipefail
 
-get_yaml_array FILES '.files[]' $MODULE_CONFIG
+get_yaml_array FILES '.files[]' "$1"
 
 cd "$CONFIG_DIRECTORY/files"
 
