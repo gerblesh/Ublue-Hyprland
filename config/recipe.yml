@@ -1,5 +1,5 @@
 # image will be published to ghcr.io/<user>/<name>
-name: startingpoint
+name: usway
 # description will be included in the image's metadata
 description: A starting point for further customization of uBlue images. Make your own! https://ublue.it/making-your-own/
 
@@ -14,6 +14,9 @@ modules:
   - from-file: bling.yml
   - from-file: yafti.yml
 
+  - type: files
+    files:
+      - /usr: usr
 
   - type: script
     scripts:

@@ -28,7 +28,6 @@ ARG IMAGE_REGISTRY=ghcr.io/ublue-os
 # templates on immutable Fedora distros, whereas the normal "/etc" is ONLY meant
 # for manual overrides and editing by the machine's admin AFTER installation!
 # See issue #28 (https://github.com/ublue-os/startingpoint/issues/28).
-COPY usr /usr
 
 COPY cosign.pub /usr/share/ublue-os/cosign.pub
 
@@ -51,4 +50,4 @@ COPY modules /tmp/modules/
 
 # Run the build script, then clean up temp files and finalize container build.
 RUN chmod +x /tmp/build.sh && /tmp/build.sh && \
-    rm -rf /tmp/* /var/* && ostree container commit
+    rm -rf /tmp/* /var/* /usr/share/ublue-os/startingpoint && ostree container commit
