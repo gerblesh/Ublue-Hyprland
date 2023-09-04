@@ -6,3 +6,4 @@ echo "Setup systemd units"
 systemctl disable rpm-ostree-countme.service
 systemctl enable power-profiles-daemon
 systemctl enable mullvad-daemon
+

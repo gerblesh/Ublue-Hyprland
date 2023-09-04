@@ -80,7 +80,6 @@ rpm:
     - kvantum
     - exa
     - gnome-disk-utility
-    - mako
     - xarchiver
     - pavucontrol
     # text editor
@@ -143,7 +142,6 @@ rpm:
     # replaced with distrobox
     - toolbox
     - sway-config-fedora
-    - dunst
     - rofi-wayland
 
 # Configuration for the "first boot" experience, which is available after login.
