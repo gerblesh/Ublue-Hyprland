@@ -204,7 +204,7 @@
         "tooltip": true,
         "return-type": "json",
         "interval": 10,
-        "on-click": "/etc/xdg/waybar/scripts/powerprofile-menu.sh",
-        "exec": "/etc/xdg/waybar/scripts/powerprofile.sh",
+        "on-click": "$HOME/.config/waybar/scripts/powerprofile-menu.sh",
+        "exec": "$HOME/.config/waybar/scripts/powerprofile.sh",
     },
 }

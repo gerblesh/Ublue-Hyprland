@@ -4,7 +4,7 @@
 @define-color warning @yellow;
 @define-color urgent @red;
 @define-color shadow @mantle;
-@define-color unfocused @surface0;
+@define-color unfocused @surface1;
 
 @define-color main @base;
 
