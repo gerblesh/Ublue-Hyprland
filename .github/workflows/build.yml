@@ -1,6 +1,6 @@
 # This workflow builds every branch of the repository daily at 20:22 UTC, one hour after ublue-os/nvidia builds.
 # The images are also built after pushuing changes or pull requests.
-# The builds can also be triggered manually in the Actions tab thanks to workflow dispatch. 
+# The builds can also be triggered manually in the Actions tab thanks to workflow dispatch.
 # Only the branch called `live` is published.
 
 
@@ -174,7 +174,7 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       # Sign container
-      - uses: sigstore/cosign-installer@v3.1.1
+      - uses: sigstore/cosign-installer@v3.1.2
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/live'
 
       - name: Sign container image

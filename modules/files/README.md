@@ -1,16 +1,17 @@
-# `files` module for startingpoint
+# `files` Module for Startingpoint
 
-The `files` module allows the user to copy files and directories from the repo to the image straight from the recipe.yml
-The files are located in `config/files`
+The `files` module simplifies the process of copying files to the image during the build time. These files are sourced from the `config/files` directory, which is located at `/tmp/config/files` inside the image.
 
-Don't use /var or /etc as directories to copy to, as those are writable directories, instead use /usr/etc for /etc, and use workarounds for /var
+> **Warning**
+> If you want to place anything in `/etc` of the final image, you MUST place them in `/usr/etc` in your repo, so that they're written to `/usr/etc` on the final system. That is the proper directory for "system" configuration templates on immutable Fedora distros, whereas the normal `/etc` is ONLY meant for manual overrides and editing by the machine's admin AFTER installation! See issue https://github.com/ublue-os/startingpoint/issues/28.
 
-Example:
+## Example Configuration:
+
 ```yaml
 type: files
-  files:
-    usr: /usr # the key is the file/directory inside of `config/files`, and the value is the file/directory on the image
+files:
+  usr: /usr
 ```
 
+In the example above, `usr` represents the directory located inside the `config/files` in the repository, while `/usr` designates the corresponding destination within the image.
 
-NOTE: If you couldn't tell, this README is very WIP and should probably be replaced

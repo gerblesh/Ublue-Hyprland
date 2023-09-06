@@ -21,6 +21,7 @@ ARG RECIPE=recipe.yml
 # The default image registry to write to policy.json and cosign.yaml
 ARG IMAGE_REGISTRY=ghcr.io/ublue-os
 
+<<<<<<< HEAD
 # Copy static configurations and component files.
 # Warning: If you want to place anything in "/etc" of the final image, you MUST
 # place them in "./usr/etc" in your repo, so that they're written to "/usr/etc"
@@ -29,9 +30,11 @@ ARG IMAGE_REGISTRY=ghcr.io/ublue-os
 # for manual overrides and editing by the machine's admin AFTER installation!
 # See issue #28 (https://github.com/ublue-os/startingpoint/issues/28).
 
+=======
+>>>>>>> 8f76fd66a262d18b0f36960c2582d1ce796cc681
 COPY cosign.pub /usr/share/ublue-os/cosign.pub
 
-COPY config /usr/share/ublue-os/startingpoint
+COPY config /tmp/config
 
 # Copy the bling from ublue-os/bling into tmp, to be installed later by the bling module
 # Feel free to remove these lines if you want to speed up image builds and don't want any bling
