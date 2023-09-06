@@ -26,14 +26,14 @@ modules:
   - from-file: packages.yml
   - from-file: bling.yml
   - from-file: yafti.yml
-  - from-file: systemd.yml
 
   - type: script
     scripts:
       # fetches local RPMs (Mullvad VPN)
       - fetch-rpms.sh
-
-  - type: script
-    scripts:
       # this sets up the proper policy & signing files for signed images to work
       - signing.sh
+
+  - from-file: systemd.yml
+
+
