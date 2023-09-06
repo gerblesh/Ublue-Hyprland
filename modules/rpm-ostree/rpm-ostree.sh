@@ -24,8 +24,9 @@ if [[ ${#OPTFIX[@]} -gt 0 ]]; then
     for OPTPKG in "${OPTFIX[@]}"; do
         OPTPKG="${OPTPKG%\"}"
         OPTPKG="${OPTPKG#\"}"
+        OPTPKG=$(printf "$OPTPKG")
         mkdir -p "/usr/lib/opt/${OPTPKG}"
-        ln -s "/usr/lib/opt/${OPTPKG}" "/var/opt/${OPTPKG}"
+        ln -s "../../usr/lib/opt/${OPTPKG}" "/var/opt/${OPTPKG}"
         echo "Created symlinks for ${OPTPKG}"
     done
 fi
