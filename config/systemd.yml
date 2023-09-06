@@ -1,0 +1,7 @@
+type: systemd
+  system:
+    enabled:
+      - power-profiles-daemon
+      - mullvad-daemon
+    disabled:
+      - rpm-ostree-countme.timer
