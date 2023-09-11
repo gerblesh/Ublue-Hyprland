@@ -13,7 +13,6 @@ on: # https://docs.github.com/en/actions/using-workflows/events-that-trigger-wor
       - live
       - template
       - main
-      - modular-rewrite
     paths-ignore: # don't rebuild if only documentation has changed
       - "**.md"
   pull_request:
@@ -152,7 +151,7 @@ jobs:
       - name: Push To GHCR
         uses: redhat-actions/push-to-registry@v2
         id: push
-        # if: github.event_name != 'pull_request' && github.ref == 'refs/heads/live'
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/live'
         env:
           REGISTRY_USER: ${{ github.actor }}
           REGISTRY_PASSWORD: ${{ github.token }}
@@ -167,7 +166,7 @@ jobs:
 
       - name: Login to GitHub Container Registry
         uses: docker/login-action@v2
-        # if: github.event_name != 'pull_request' && github.ref == 'refs/heads/live'
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/live'
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
@@ -175,10 +174,10 @@ jobs:
 
       # Sign container
       - uses: sigstore/cosign-installer@v3.1.2
-        # if: github.event_name != 'pull_request' && github.ref == 'refs/heads/live'
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/live'
 
       - name: Sign container image
-        # if: github.event_name != 'pull_request' && github.ref == 'refs/heads/live'
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/live'
         run: |
           cosign sign -y --key env://COSIGN_PRIVATE_KEY ${{ steps.registry_case.outputs.lowercase }}/${{ steps.image_case.outputs.lowercase }}@${TAGS}
         env:
@@ -187,6 +186,6 @@ jobs:
           COSIGN_PRIVATE_KEY: ${{ secrets.SIGNING_SECRET }}
 
       - name: Echo outputs
-        # if: github.event_name != 'pull_request' && github.ref == 'refs/heads/live'
+        if: github.event_name != 'pull_request' && github.ref == 'refs/heads/live'
         run: |
           echo "${{ toJSON(steps.push.outputs) }}"
