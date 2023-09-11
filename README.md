@@ -1,5 +1,10 @@
 # Starting point
 
+> **Warning**
+> Startingpoint was recently rewritten, and this version is considered a "1.0" *semi-*stable release.
+> There are breaking changes between this and the previous version.
+> If you are merging changes from the previous (v0) version, please refer to [the heads-up blog post](https://universal-blue.org/blog/2023/09/02/startingpoint-rewrite-heads-up-what-you-need-to-know/).
+
 [![build-ublue](https://github.com/ublue-os/startingpoint/actions/workflows/build.yml/badge.svg)](https://github.com/ublue-os/startingpoint/actions/workflows/build.yml)
 
 This is a constantly updating template repository for creating [a native container image](https://fedoraproject.org/wiki/Changes/OstreeNativeContainerStable) designed to be customized however you want. GitHub will build your image for you, and then host it for you on [ghcr.io](https://github.com/features/packages). You then just tell your computer to boot off of that image. GitHub keeps 90 days worth image backups for you, thanks Microsoft!
@@ -30,12 +35,12 @@ For more information about customization, see [the README in the config director
 
 Documentation around making custom images exists / should be written in two separate places:
 * [The Tinkerer's Guide on the website](https://universal-blue.org/tinker/make-your-own/) for general documentation around making custom images, best practices, tutorials, and so on.
-* Inside this repository for documentation specific to the ins and outs of the template, how it works, how to customize it, and some essential guidance on how to make custom images.
+* Inside this repository for documentation specific to the ins and outs of the template (like module documentation), and just some essential guidance on how to make custom images.
 
 ## Installation
 
 > **Warning**
-> This is an experimental feature and should not be used in production, try it in a VM for a while!
+> [This is an experimental feature](https://www.fedoraproject.org/wiki/Changes/OstreeNativeContainerStable) and should not be used in production, try it in a VM for a while!
 
 To rebase an existing Silverblue/Kinoite installation to the latest build:
 

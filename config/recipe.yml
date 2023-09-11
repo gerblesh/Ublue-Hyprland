@@ -7,25 +7,31 @@ description: A starting point for further customization of uBlue images. Make yo
 base-image: ghcr.io/ublue-os/sericea-main
 image-version: 38 # latest is also supported if you want new updates ASAP
 
-# list of modules that will be executed in order
-
-# you can include multiple of the same module
-
+# list of modules, executed in order
+# you can include multiple instances of the same module
 modules:
+
   - type: files
     files:
-      - usr: /usr
-  # Copy static configurations and component files.
-  # Warning: If you want to place anything in "/etc" of the final image, you MUST
-  # place them in "./usr/etc" in your repo, so that they're written to "/usr/etc"
-  # on the final system. That is the proper directory for "system" configuration
-  # templates on immutable Fedora distros, whereas the normal "/etc" is ONLY meant
-  # for manual overrides and editing by the machine's admin AFTER installation!
-  # See issue #28 (https://github.com/ublue-os/startingpoint/issues/28).
+      - usr: /usr # copy static configurations
+                  # configuration you wish to end up in /etc/ on the booted system should be
+                  # added into /usr/etc/ as that is the proper "distro" config directory on ostree
+                  # read more in the files module's README
 
   - from-file: packages.yml
   - from-file: bling.yml
   - from-file: yafti.yml
+
+  - type: bling # configure what to pull in from ublue-os/bling
+    install:
+      - fonts # selection of common good free fonts
+      - justfiles # add "!include /usr/share/ublue-os/just/bling.just"
+                  # in your custom.just (added by default) or local justfile
+      - nix-installer # shell shortcuts for determinate system's nix installers
+      - ublue-os-wallpapers
+      # - ublue-update # https://github.com/ublue-os/ublue-update
+      # - dconf-update-service # a service unit that updates the dconf db on boot
+      # - devpod # https://devpod.sh/ as an rpm
 
   - type: script
     scripts:
@@ -35,5 +41,3 @@ modules:
       - signing.sh
 
   - from-file: systemd.yml
-
-
