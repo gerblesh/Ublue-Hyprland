@@ -26,6 +26,7 @@ set_config_value() {
     CURRENT=$(get_config_value $1 $3)
     sed -i 's/'"$1"'='"$CURRENT"'/'"$1"'='"$2"'/g' $3
 }
+
 export -f get_yaml_array # this makes the function available to all modules
 export -f get_config_value
 export -f set_config_value
