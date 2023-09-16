@@ -19,19 +19,6 @@ get_yaml_array() {
 }
 export -f get_yaml_array # this makes the function available to all modules
 
-# Declare dynamically generated variables as exported
-declare -x IMAGE_NAME BASE_IMAGE OS_VERSION
-
-# Read configuration variables.
-BASE_IMAGE="$(yq '.base-image' "$RECIPE_FILE")"
-IMAGE_NAME="$(yq '.name' "$RECIPE_FILE")"
-
-# Automatically determine which Fedora version we're building.
-OS_VERSION="$(grep -Po '(?<=VERSION_ID=)\d+' /usr/lib/os-release)"
-
-# Welcome.
-echo "Building $IMAGE_NAME from $BASE_IMAGE:$OS_VERSION."
-
 run_module() {
     MODULE="$1"
     TYPE=$(echo "$MODULE" | yq '.type')
@@ -63,3 +50,18 @@ run_modules() {
         run_module "$MODULE"
     fi
 }
+
+# Declare dynamically generated variables as exported
+declare -x IMAGE_NAME BASE_IMAGE OS_VERSION
+
+# Read configuration variables.
+BASE_IMAGE="$(yq '.base-image' "$RECIPE_FILE")"
+IMAGE_NAME="$(yq '.name' "$RECIPE_FILE")"
+
+# Automatically determine which Fedora version we're building.
+OS_VERSION="$(grep -Po '(?<=VERSION_ID=)\d+' /usr/lib/os-release)"
+
+# Welcome.
+echo "Building $IMAGE_NAME from $BASE_IMAGE:$OS_VERSION."
+
+run_modules "$RECIPE_FILE"
