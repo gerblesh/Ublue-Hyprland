@@ -7,9 +7,9 @@ modules:
                   # added into /usr/etc/ as that is the proper "distro" config directory on ostree
                   # read more in the files module's README
 
-  - from-file: packages.yml
-  - from-file: bling.yml
-  - from-file: yafti.yml
+  - from-file: module_config/packages.yml
+  - from-file: module_config/bling.yml
+  - from-file: module_config/yafti.yml
 
   - type: script
     scripts:
@@ -17,3 +17,4 @@ modules:
       - fetch-rpms.sh
       # this sets up the proper policy & signing files for signed images to work
       - signing.sh
+  - from-file: module_config/systemd.yml
