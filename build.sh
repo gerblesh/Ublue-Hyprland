@@ -39,7 +39,6 @@ run_module() {
 }
 
 run_modules() {
-    # Run each module
     MODULES_FILE="$1"
     readarray MODULES < <(yq -o=j -I=0 '.modules[]' "$MODULES_FILE" )
     if [[ ${#MODULES[@]} -gt 0 ]]; then
