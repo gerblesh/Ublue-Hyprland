@@ -17,4 +17,3 @@ if [ ! -f "$HOME"/.config/ublue-firstboot ]; then
 
     /usr/bin/yafti /usr/share/ublue-os/firstboot/yafti.yml
 fi
-
