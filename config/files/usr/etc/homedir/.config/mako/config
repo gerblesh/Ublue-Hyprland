@@ -15,12 +15,18 @@ height=175
 width=500
 max-icon-size=128
 border-size=4
-icon-path=/usr/share/icons/Papirus/:/usr/share/icons/Adwaita
+icon-path=/usr/share/icons/Catppuccin-SE
 on-button-left=exec makoctl menu -n "$id" fuzzel -d --prompt 'Select action: ' && makoctl dismiss -n "$id"
-format=<i><small><span color='#45475a'>%a</span></small></i>\n<b>%s</b>\n%b
+format=<span color='#45475a' size='smaller' style='italic'>%a</span>\n<span size='larger' weight='bold'>%s</span>\n%b
+
+[app-name=""]
+format=<span color='#45475a' size='smaller' style='italic'>%a</span>\n<span size='larger' weight='bold'>%s</span>\n%b
 
 [actionable]
-format=<i><small><span color='#45475a'>%a</span></small></i>\n<span color='#eba0ac'>(A) </span> <b>%s</b>\n%b
+format=<span color='#45475a' size='smaller' style='italic'>%a</span>\n<span color='#eba0ac' size='smaller' weight='bold'>(A) </span><span size='larger' weight='bold'>%s</span>\n%b
+
+[actionable app-name=""]
+format=<span color='#eba0ac' size='smaller' weight='bold'>(A) </span><span size='larger' weight='bold'>%s</span>\n%b
 
 [urgency=high]
 border-color=#f38ba8

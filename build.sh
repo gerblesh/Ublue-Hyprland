@@ -31,8 +31,6 @@ run_module() {
         # If the type is not found, that means that the module config
         # is in a separate file, and has to be read from it
         FILE=$(echo "$MODULE" | yq '.from-file')
-
-        #MODULE_CONFIG=$(yq -o=j -I=0 '.' "$CONFIG_DIRECTORY/$FILE")
         run_modules "$CONFIG_DIRECTORY/$FILE"
     fi
     echo "======"
