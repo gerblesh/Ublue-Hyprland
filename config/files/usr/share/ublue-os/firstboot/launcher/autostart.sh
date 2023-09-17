@@ -7,10 +7,10 @@ if [ ! -f "$HOME"/.config/ublue-firstboot ]; then
 
     touch "$HOME"/.config/ublue-firstboot
 
-    sed -i " 1 d" "$HOME"/.config/sway/config
+    # sed -i " 1 d" "$HOME"/.config/sway/config
 
-    mkdir -p "$HOME"/.config/just
-    cp -r /usr/share/ublue-os/just/custom.just "$HOME"/.config/just/justfile
+    #mkdir -p "$HOME"/.config/just
+    #cp -r /usr/share/ublue-os/just/custom.just "$HOME"/.config/just/justfile
 
     cp -r /usr/etc/homedir/.* "$HOME"/
     cp -r /usr/etc/homedir/* "$HOME"/
