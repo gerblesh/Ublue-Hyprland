@@ -1,6 +1,8 @@
 # Only process users with home directories, but skip the "root" user.
-f [ "$(id -u)" != "0" ] && [ ! -z "$HOME" ] && [ -d "$HOME" ]; then
-    source "$HOME/.profile"
+if [ "$(id -u)" != "0" ] && [ ! -z "$HOME" ] && [ -d "$HOME" ]; then
+    if [ -f "$HOME/.profile" ]; then
+      source "$HOME/.profile"
+    fi
 #    # Ensure target file exists and is a symlink (not a regular file or dir).
 #    if [ ! -L "$HOME"/.config/autostart/ublue-firstboot.desktop ]; then
 #        # Remove any leftovers or incorrect (non-link) files with the same name.
