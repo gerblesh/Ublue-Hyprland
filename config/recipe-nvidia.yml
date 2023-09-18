@@ -10,10 +10,6 @@ image-version: 38 # latest is also supported if you want new updates ASAP
 # list of modules, executed in order
 # you can include multiple instances of the same module
 modules:
-  - type: files
-    files:
-      - sway-nvidia.sh: /usr/bin/sway-nvidia
-      - sway-nvidia.desktop: /usr/share/wayland-sessions/sway.desktop
-      - wlroots-env-nvidia.sh: /usr/share/wlroots-nvidia/wlroots-env-nvidia.sh
+  - from-file: module_config/desktop.yml
+  - from-file: module_config/nvidia.yml
   - from-file: common.yml
-  # nvidia specific files

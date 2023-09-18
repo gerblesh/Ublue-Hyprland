@@ -1,0 +1,7 @@
+type: files
+files:
+  - desktop/foot: /usr/etc/xdg/foot
+  - desktop/fuzzel: /usr/etc/xdg/fuzzel
+  - desktop/sway: /usr/etc/sway
+  - desktop/mako: /usr/etc/homedir/.config/mako
+  - desktop/sddm: /usr/share/sddm

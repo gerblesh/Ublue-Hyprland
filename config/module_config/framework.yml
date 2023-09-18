@@ -1,0 +1,7 @@
+type: files
+files:
+  - framework/foot: /usr/etc/xdg/foot
+  - framework/fuzzel: /usr/etc/xdg/fuzzel
+  - framework/sway: /usr/etc/sway
+  - framework/mako: /usr/etc/homedir/.config/mako
+  - framework/sddm: /usr/share/sddm
