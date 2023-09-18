@@ -13,7 +13,7 @@ modules:
   - type: files
     files:
       - sway-nvidia.sh: /usr/bin/sway-nvidia
-      - sway-nvidia.desktop: /usr/share/wayland-sessions/sway-nvidia.desktop
+      - sway-nvidia.desktop: /usr/share/wayland-sessions/sway.desktop
       - wlroots-env-nvidia.sh: /usr/share/wlroots-nvidia/wlroots-env-nvidia.sh
   - from-file: common.yml
   # nvidia specific files
