@@ -16,7 +16,7 @@ import sys
 
 WINDOW_ICONS = {
     "firefox": "",
-    "godot": "",
+    "godot_engine": "",
     "foot": "",
     "brave-browser": "",
     "lite-xl": "",
@@ -25,21 +25,40 @@ WINDOW_ICONS = {
     "thunar": "󰪶",
     "mpv": "󰈫",
     "imv": "",
-    "com.obsproject.Studio": "󰑋",
+    "com.obsproject.studio": "󰑋",
     "obsidian": "󱓧",
-    "mullvad vpn": "󰒄"
+    "mullvad vpn": "󰒄",
+    "signal": "󰆉",
+    "librewolf": "󰈹",
+    "firefox": "󰈹",
+    "de.haeckerfelix.fragments": "󱑣",
+    "steamwebhelper": "󰓓",
+    "dolphin-emu": "󱢴",
+    "yuzu": "󰟡",
+    "info.cemu.cemu": "󰜭",
+    "otpclient": "󰥿",
+    "com.github.tchx84.flatseal": "",
+    "com.github.gradienceteam.gradience.devel": "",
+    "io.github.flattool.warehouse": "",
+    "io.missioncenter.missioncenter": "󰨇",
+    "gnome-boxes": "󰹑",
+    "blender": "󰂫",
+    "com.usebottles.bottles": "󰡶",
+    "org.gnome.world.pikabackup": "󰁯",
+    "org.gnome.clocks": ""
 }
 
-DEFAULT_ICON = ""
+DEFAULT_ICON = ""
 
 
 def icon_for_window(window):
     name = None
     if window.app_id is not None and len(window.app_id) > 0:
         name = window.app_id.lower()
+    elif window.window_instance is not None and len(window.window_instance) > 0:
+        name =  window.window_instance.lower()
     elif window.window_class is not None and len(window.window_class) > 0:
         name =  window.window_class.lower()
-
 
     if name in WINDOW_ICONS:
         return WINDOW_ICONS[name]
@@ -58,7 +77,7 @@ def rename_workspaces(ipc):
                     continue
                 icon_tuple += (icon,)
         name_parts["icons"] = "  ".join(icon_tuple) + " "
-        
+
         new_name = construct_workspace_name(name_parts)
         ipc.command('rename workspace "%s" to "%s"' % (workspace.name, str(new_name)))
 
