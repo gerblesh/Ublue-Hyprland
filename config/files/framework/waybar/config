@@ -151,7 +151,11 @@
         },
         "on-click": "pavucontrol"
     },
-
+    "pulseaudio/slider": {
+        "min": 0,
+        "max": 100,
+        "orientation": "horizontal"
+    },
     "temperature": {
       "critical-threshold": 80,
       "interval": 5,
@@ -184,7 +188,7 @@
     },
     "mpris": {
         "format": "{player_icon} {title}",
-        "format-paused": "{player_icon} {title}",
+        "format-paused": "{player_icon}  {title}",
         "max-length": 32,
         "player-icons": {
             "default": " ",
@@ -192,12 +196,12 @@
             "Spot": "󰝚",
             "mpv": "󰸬",
         },
-        "status-icons": {
-            "paused": "▶",
-            "playing": "⏸"
-        },
+//        "status-icons": {
+//            "paused": "󱉺",
+//            "playing": "󰎄"
+//        },
         "ignored-players": [],
-        "interval": 1
+        "interval": 0,
     },
     "custom/power-profile": {
         "format": "{}",
@@ -206,5 +210,5 @@
         "interval": 10,
         "on-click": "/etc/xdg/waybar/scripts/powerprofile-menu.sh",
         "exec": "/etc/xdg/waybar/scripts/powerprofile.sh",
-    },
+    }
 }

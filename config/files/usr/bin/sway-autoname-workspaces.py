@@ -20,7 +20,7 @@ WINDOW_ICONS = {
     "foot": "",
     "brave-browser": "",
     "lite-xl": "",
-    "spot": "",
+    "dev.alextren.spot": "",
     "com.github.neithern.g4music": "󰝚",
     "thunar": "󰪶",
     "mpv": "󰈫",

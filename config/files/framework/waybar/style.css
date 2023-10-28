@@ -14,21 +14,21 @@
 
 @keyframes blink-warning {
     70% {
-        color: @primary;
+        background-color: @primary;
     }
 
     to {
-        color: @warning;
+        background-color: @warning;
     }
 }
 
 @keyframes blink-critical {
     10% {
-      color: @primary;
+      background-color: @primary;
     }
 
     to {
-      color: @urgent;
+      background-color: @urgent;
     }
 }
 
@@ -56,6 +56,10 @@
     background-color: @main;
 }
 
+#window {
+    /*no styles*/
+}
+
 /* Each module */
 #custom-power-profile,
 #workspaces button,
@@ -73,12 +77,12 @@
 #temperature,
 #tray {
     /*color: @text;*/
+    color: @main;
     border-radius: 0px;
     background-color: @transparent;
-    margin: 0px 5px;
+    margin: 0px 5px 5px 5px;
     padding: 5px 5px;
-    padding-bottom: 7px;
-    border-top: 2px solid @transparent;
+    border-bottom: 3px solid @underline;
 }
 
 
@@ -103,102 +107,57 @@
 }
 
 #battery.charging {
-    color: @secondary;
+    background-color: @secondary;
 }
 
 #battery {
-    color: @primary;
+    background-color: @primary;
 }
 
 #clock {
-    color: @tertiary;
-}
-
-#cpu {
-  /* No styles */
-}
-
-#cpu.warning {
-    color: @peach;
-}
-
-#cpu.critical {
-    color: @urgent;
-}
-
-#memory {
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#memory.warning {
-    color: @warning;
-}
-
-#memory.critical {
-    color: @urgent;
-    animation-name: blink-critical;
-    animation-duration: 2s;
+    background-color: @sapphire;
 }
 
 #custom-power-profile.power-saver {
-    color: @urgent;
+    background-color: @urgent;
 }
 
 #custom-power-profile.balanced {
-    color: @primary;
+    background-color: @primary;
 }
 
 #custom-power-profile.performance {
-    color: @warning;
-}
-
-#network {
-    /* No styles */
-}
-
-#network.disconnected {
-    color: orange;
+    background-color: @warning;
 }
 
 #mpris {
-    color: @primary
+    background-color: @music;
 }
 
 #pulseaudio {
-    color: @tertiary;
-    
-}
+    background-color: @tertiary;
 
-#pulseaudio.muted {
-    /* No styles */
-}
-
-#temperature {
-    /* No styles */
-}
-
-#temperature.critical {
-    color: @urgent;
 }
 
 #tray {
-    color: @primary;
+    color: @tray;
+    border-color: @tray;
 }
 
-#window {
-    /*no styles*/
-}
 #idle_inhibitor.activated,
 #mode,
 #backlight {
-    color: @secondary;
+    background-color: @backlight;
 }
 
+#idle_inhibitor.deactivated,
+#pulseaudio.muted,
 #workspaces button {
+    border-color: @unfocused;
     color: @unfocused;
+    background-color: @transparent;
 }
+
 
 #workspaces button:hover,
 #workspaces button.focused {
@@ -208,13 +167,11 @@
 #workspaces button.focused {
     padding-right: 14px;
     padding-left: 14px;
-    color: @primary
+    background-color: @primary;
+    border-color: @underline;
+    color: @main;
 }
 
-
-#idle_inhibitor.deactivated {
-    color: @unfocused;
-}
 #workspaces button.urgent {
     color: @urgent;
 }

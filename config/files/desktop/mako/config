@@ -50,6 +50,10 @@ format=<b>%s: %b</b>
 border-color=#89b4fa
 text-color=#89b4fa
 
+[category="volume-muted"]
+border-color=#45475a
+text-color=#45475a
+
 [category="backlight"]
-border-color=#94e2d5
-text-color=#94e2d5
+border-color=#89dceb
+text-color=#89dceb
