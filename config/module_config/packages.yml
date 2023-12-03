@@ -25,7 +25,7 @@ install:
   - thunar-archive-plugin
   - imv
   - kvantum
-  - exa
+  - eza
   - gnome-disk-utility
   - mako
   - xarchiver
